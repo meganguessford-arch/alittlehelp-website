@@ -52,13 +52,9 @@
   h2 span { color: var(--blue); }
   p { font-size: 1rem; font-weight: 600; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
 
-  /* COST SECTION */
   .cost-highlight {
     background: linear-gradient(135deg, var(--dark-blue), var(--dark-text));
-    border-radius: 24px;
-    padding: 40px;
-    text-align: center;
-    margin-bottom: 48px;
+    border-radius: 24px; padding: 40px; text-align: center; margin-bottom: 48px;
   }
   .cost-highlight h3 { font-size: 1.3rem; font-weight: 900; color: white; margin-bottom: 8px; }
   .cost-highlight p { color: rgba(255,255,255,0.7); margin: 0; max-width: 520px; margin: 0 auto; }
@@ -71,7 +67,6 @@
   .cost-item .amount { font-size: 0.9rem; font-weight: 800; color: var(--blue); }
   .cost-item .note { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
 
-  /* WHAT FUNDING ENABLES */
   .fund-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; }
   @media (max-width: 640px) { .fund-grid { grid-template-columns: 1fr; } }
   .fund-card { background: var(--light-blue); border-radius: 20px; padding: 28px; }
@@ -79,12 +74,10 @@
   .fund-card h4 { font-size: 1rem; font-weight: 800; color: var(--dark-text); margin-bottom: 8px; }
   .fund-card p { font-size: 0.875rem; margin: 0; line-height: 1.6; }
 
-  /* DONATE BOX */
   .donate-box {
     background: white; border-radius: 24px; padding: 48px 40px;
     text-align: center; border: 2px solid var(--pink);
-    box-shadow: 0 8px 40px rgba(233,30,140,0.1);
-    margin: 48px 0;
+    box-shadow: 0 8px 40px rgba(233,30,140,0.1); margin: 48px 0;
   }
   .donate-box .heart { font-size: 3rem; display: block; margin-bottom: 16px; }
   .donate-box h3 { font-size: 1.5rem; font-weight: 900; color: var(--dark-text); margin-bottom: 12px; }
@@ -96,17 +89,14 @@
   .btn-pink { background: var(--pink); color: white; box-shadow: 0 4px 20px rgba(233,30,140,0.35); font-size: 1.1rem; padding: 16px 40px; }
   .btn-pink:hover { background: #c91578; transform: translateY(-2px); }
 
-  /* TAX NOTICE */
   .tax-notice { background: var(--off-white); border: 1px solid var(--warm-gray); border-radius: 14px; padding: 16px 20px; font-size: 0.85rem; color: var(--muted); text-align: center; margin-top: 16px; }
 
-  /* GRANTS */
   .grants-list { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }
   .grant-item { background: white; border-radius: 16px; padding: 20px 24px; border: 1px solid var(--warm-gray); display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
   .grant-item h4 { font-size: 0.95rem; font-weight: 800; color: var(--dark-text); margin-bottom: 4px; }
   .grant-item p { font-size: 0.82rem; color: var(--muted); margin: 0; }
   .grant-deadline { font-size: 0.8rem; font-weight: 800; color: var(--pink); white-space: nowrap; }
 
-  /* OTHER WAYS */
   .other-ways { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
   @media (max-width: 640px) { .other-ways { grid-template-columns: 1fr; } }
   .way-card { background: var(--off-white); border: 1px solid var(--warm-gray); border-radius: 16px; padding: 24px; text-align: center; }
@@ -115,6 +105,7 @@
   .way-card p { font-size: 0.82rem; margin: 0 0 16px; line-height: 1.5; }
   .way-card a { font-size: 0.82rem; font-weight: 800; color: var(--blue); text-decoration: none; }
   .way-card a:hover { text-decoration: underline; }
+  .way-card.featured { background: var(--light-blue); border-color: var(--blue); }
 
   footer { background: var(--dark-text); color: rgba(255,255,255,0.5); padding: 40px 24px; text-align: center; font-size: 0.8rem; font-weight: 600; line-height: 1.8; }
   footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
@@ -128,7 +119,7 @@
 
 <nav>
   <a href="index.html" class="nav-logo">
-    <img src="https://cdn.dorik.com/6848d84b526e65001e82cde6/images/ChatGPTImageJun182025072523PM-bEt0a.png" alt="A Little Help?! Logo">
+    <img src="logo192.png" alt="A Little Help?! Logo">
     <span>A Little Help?!</span>
   </a>
   <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
@@ -153,14 +144,12 @@
   <div class="container">
     <p class="section-label">The Reality</p>
     <h2>Free for users doesn't mean<br><span>free to build.</span></h2>
-
     <div class="cost-highlight">
       <p>Current monthly hard costs</p>
       <span class="cost-number">~$50</span>
       <h3>Remarkably lean. Intentionally so.</h3>
       <p>Built by a solo founder using AI-assisted development, A Little Help?! runs on enterprise-grade infrastructure at near-zero cost. But "near-zero" isn't zero — and the human cost is real.</p>
     </div>
-
     <div class="costs-grid">
       <div class="cost-item">
         <div><div class="name">Database & Auth (Supabase)</div><div class="note">50K users free tier</div></div>
@@ -290,11 +279,11 @@
     <p class="section-label">Other Ways to Help</p>
     <h2>You don't have to donate<br><span>to make a difference.</span></h2>
     <div class="other-ways">
-      <div class="way-card">
-        <span class="icon">📱</span>
-        <h4>Use the App</h4>
-        <p>The most powerful thing you can do is join and show up for a neighbor.</p>
-        <a href="https://alittlehelp-app.vercel.app">Open the App →</a>
+      <div class="way-card featured">
+        <span class="icon">🌱</span>
+        <h4>Be a Beta Tester</h4>
+        <p>In the DFW area? We're hand-selecting our first neighbors. Apply to join the beta and help shape the community from the ground up.</p>
+        <a href="https://bit.ly/alittlehelpwaitlist">Apply Now →</a>
       </div>
       <div class="way-card">
         <span class="icon">📣</span>
@@ -314,7 +303,7 @@
 
 <footer>
   <div class="footer-logo">
-    <img src="https://cdn.dorik.com/6848d84b526e65001e82cde6/images/ChatGPTImageJun182025072523PM-bEt0a.png" alt="Logo">
+    <img src="logo192.png" alt="Logo">
     <span>A Little Help?!</span>
   </div>
   <p>A 501(c)(3) nonprofit organization · EIN: 35-2983400</p>
