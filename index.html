@@ -420,12 +420,6 @@
     padding: 24px 20px;
     text-align: center;
     border: 1px solid var(--warm-gray);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
-  .step-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(43,143,212,0.12);
   }
 
   .step-num {
@@ -463,13 +457,14 @@
 
   .screenshots-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     margin-top: 48px;
+    justify-items: center;
   }
 
-  @media (max-width: 640px) {
-    .screenshots-grid { grid-template-columns: 1fr 1fr; }
+  @media (max-width: 768px) {
+    .screenshots-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
   .screenshot-frame {
@@ -477,12 +472,9 @@
     overflow: hidden;
     border: 2px solid var(--blue);
     box-shadow: 0 8px 32px rgba(43,143,212,0.15);
-    transition: transform 0.3s;
     background: white;
-  }
-
-  .screenshot-frame:hover {
-    transform: translateY(-6px) rotate(-1deg);
+    max-width: 200px;
+    width: 100%;
   }
 
   .screenshot-frame img {
@@ -857,21 +849,27 @@
     <div class="screenshots-grid">
       <div class="screenshot-item">
         <div class="screenshot-frame">
-          <img src="homescreenfeed.png" alt="Community Feed">
+          <img src="appwelcomescreen.PNG" alt="Welcome Screen">
+        </div>
+        <div class="screenshot-label">Welcome</div>
+      </div>
+      <div class="screenshot-item">
+        <div class="screenshot-frame">
+          <img src="appfeedscreen.PNG" alt="Community Feed">
         </div>
         <div class="screenshot-label">Community Feed</div>
       </div>
       <div class="screenshot-item">
         <div class="screenshot-frame">
-          <img src="https://cdn.dorik.com/6848d84b526e65001e82cde6/images/appimage5-Copy-GpVsf.PNG" alt="Offer to Help">
+          <img src="appzipcodescreen.PNG" alt="Set Location">
         </div>
-        <div class="screenshot-label">Offer to Help</div>
+        <div class="screenshot-label">Set Location</div>
       </div>
       <div class="screenshot-item">
         <div class="screenshot-frame">
-          <img src="https://cdn.dorik.com/6848d84b526e65001e82cde6/images/appimage4-jWqU8.PNG" alt="Ask for Help">
+          <img src="appmessagesscreen.PNG" alt="Messages">
         </div>
-        <div class="screenshot-label">Ask for Help</div>
+        <div class="screenshot-label">Private Messages</div>
       </div>
     </div>
     <div style="text-align:center; margin-top:32px;">
@@ -884,7 +882,7 @@
 <section class="tree-section">
   <div class="tree-split">
     <div class="tree-image">
-      <img src="https://cdn.dorik.com/6848d84b526e65001e82cde6/images/boysintheliveoak-pMz28.jpeg" alt="Kids in the live oak tree">
+      <img src="boysintree.jpeg" alt="Kids in the live oak tree">
     </div>
     <div class="tree-content">
       <p class="section-label">Born from a Dream</p>
