@@ -3,111 +3,287 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Support Us — A Little Help?!</title>
+<title>Our Story — A Little Help?!</title>
+<meta name="description" content="The origin story of A Little Help?! — a dream, a live oak tree, and a mother's vision to restore faith in humanity.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --blue: #2B8FD4; --dark-blue: #1A6FAD; --light-blue: #E8F4FD;
-    --pink: #e91e8c; --off-white: #F8F7F4; --warm-gray: #EAE8E3;
-    --dark-text: #1C2B3A; --muted: #6B7F8E; --white: #ffffff;
+    --blue: #2B8FD4;
+    --dark-blue: #1A6FAD;
+    --light-blue: #E8F4FD;
+    --pink: #e91e8c;
+    --off-white: #F8F7F4;
+    --warm-gray: #EAE8E3;
+    --dark-text: #1C2B3A;
+    --muted: #6B7F8E;
+    --white: #ffffff;
   }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Nunito', sans-serif; background: var(--off-white); color: var(--dark-text); overflow-x: hidden; }
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--off-white);
+    color: var(--dark-text);
+    overflow-x: hidden;
+  }
 
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--warm-gray); padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--warm-gray);
+    padding: 0 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px; text-decoration: none;
+  }
   .nav-logo img { height: 40px; width: 40px; object-fit: contain; }
   .nav-logo span { font-weight: 900; font-size: 1.1rem; color: var(--blue); }
   .nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
-  .nav-links a { text-decoration: none; font-weight: 700; font-size: 0.875rem; color: var(--dark-text); padding: 8px 14px; border-radius: 99px; transition: all 0.2s; }
+  .nav-links a {
+    text-decoration: none; font-weight: 700; font-size: 0.875rem;
+    color: var(--dark-text); padding: 8px 14px; border-radius: 99px; transition: all 0.2s;
+  }
   .nav-links a:hover { background: var(--light-blue); color: var(--blue); }
   .nav-links .btn-nav { background: var(--pink); color: white; padding: 8px 20px; }
   .nav-links .btn-nav:hover { background: #c91578; color: white; }
-  .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+  .hamburger {
+    display: none; background: none; border: none; cursor: pointer;
+    padding: 8px; flex-direction: column; gap: 5px;
+  }
   .hamburger span { display: block; width: 24px; height: 2px; background: var(--dark-text); border-radius: 2px; }
   @media (max-width: 768px) {
     .hamburger { display: flex; }
-    .nav-links { display: none; position: fixed; top: 64px; left: 0; right: 0; background: white; flex-direction: column; padding: 16px; border-bottom: 1px solid var(--warm-gray); gap: 4px; }
+    .nav-links {
+      display: none; position: fixed; top: 64px; left: 0; right: 0;
+      background: white; flex-direction: column; padding: 16px;
+      border-bottom: 1px solid var(--warm-gray); gap: 4px;
+    }
     .nav-links.open { display: flex; }
     .nav-links a { width: 100%; text-align: center; }
   }
 
-  .page-hero {
-    padding: 120px 24px 60px;
-    background: linear-gradient(135deg, var(--pink) 0%, var(--dark-blue) 100%);
+  /* HERO */
+  .story-hero {
+    min-height: 60vh;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding-top: 64px;
+    overflow: hidden;
+  }
+  .story-hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('https://cdn.dorik.com/6848d84b526e65001e82cde6/images/IMG_4826-Nooh9.jpg');
+    background-size: cover;
+    background-position: center 20%;
+    filter: brightness(0.35);
+  }
+  .story-hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(28,43,58,0.95) 100%);
+  }
+  .story-hero-content {
+    position: relative; z-index: 2;
+    padding: 48px 40px;
+    max-width: 800px;
+    animation: fadeup 1s ease both;
+  }
+  @keyframes fadeup {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .story-hero-content .label {
+    font-size: 0.75rem; font-weight: 800; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--pink); margin-bottom: 12px;
+  }
+  .story-hero-content h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 900; color: white; line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .story-hero-content h1 span { color: var(--pink); }
+  .story-hero-content p {
+    font-size: 1.05rem; color: rgba(255,255,255,0.75);
+    font-weight: 600; max-width: 560px; line-height: 1.7;
+  }
+
+  /* CONTENT */
+  .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+  .story-section {
+    padding: 72px 24px;
+  }
+
+  .story-section.alt { background: white; }
+
+  .chapter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  @media (max-width: 768px) {
+    .chapter { grid-template-columns: 1fr; }
+    .chapter .chapter-image { order: -1; }
+  }
+
+  .chapter.reverse .chapter-image { order: 2; }
+  .chapter.reverse .chapter-text  { order: 1; }
+  @media (max-width: 768px) {
+    .chapter.reverse .chapter-image { order: -1; }
+  }
+
+  .chapter-image {
+    border-radius: 24px;
+    overflow: hidden;
+    border: 2px solid var(--warm-gray);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+  }
+  .chapter-image img {
+    width: 100%; display: block;
+  }
+  .chapter-image .caption {
+    padding: 10px 16px;
+    font-size: 0.8rem; font-weight: 700;
+    color: var(--muted); background: white;
+    text-align: center; font-style: italic;
+  }
+
+  .label {
+    font-size: 0.75rem; font-weight: 800; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--pink); margin-bottom: 12px;
+  }
+
+  h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 900; color: var(--dark-text);
+    line-height: 1.2; margin-bottom: 20px;
+  }
+  h2 span { color: var(--blue); }
+
+  p {
+    font-size: 1rem; font-weight: 600;
+    color: var(--muted); line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  blockquote {
+    font-size: 1.15rem; font-weight: 700;
+    font-style: italic; color: var(--blue);
+    border-left: 4px solid var(--pink);
+    padding: 12px 20px;
+    margin: 24px 0;
+    line-height: 1.6;
+    background: var(--light-blue);
+    border-radius: 0 12px 12px 0;
+  }
+
+  .highlight-box {
+    background: var(--dark-text);
+    border-radius: 20px;
+    padding: 36px 40px;
+    margin: 48px 0;
     text-align: center;
   }
-  .page-hero .label { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 12px; }
-  .page-hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: white; margin-bottom: 16px; line-height: 1.15; }
-  .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,0.8); font-weight: 600; max-width: 540px; margin: 0 auto; line-height: 1.7; }
-
-  .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
-  section { padding: 72px 24px; }
-  section.alt { background: white; }
-
-  .section-label { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); margin-bottom: 12px; }
-  h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; color: var(--dark-text); line-height: 1.2; margin-bottom: 20px; }
-  h2 span { color: var(--blue); }
-  p { font-size: 1rem; font-weight: 600; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
-
-  .cost-highlight {
-    background: linear-gradient(135deg, var(--dark-blue), var(--dark-text));
-    border-radius: 24px; padding: 40px; text-align: center; margin-bottom: 48px;
+  .highlight-box p {
+    color: rgba(255,255,255,0.75);
+    font-size: 1.1rem;
+    margin-bottom: 0;
   }
-  .cost-highlight h3 { font-size: 1.3rem; font-weight: 900; color: white; margin-bottom: 8px; }
-  .cost-highlight p { color: rgba(255,255,255,0.7); margin: 0; max-width: 520px; margin: 0 auto; }
-  .cost-number { font-size: 3.5rem; font-weight: 900; color: var(--pink); display: block; margin: 12px 0; }
-
-  .costs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 32px; }
-  @media (max-width: 640px) { .costs-grid { grid-template-columns: 1fr; } }
-  .cost-item { background: var(--off-white); border: 1px solid var(--warm-gray); border-radius: 14px; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; }
-  .cost-item .name { font-size: 0.9rem; font-weight: 700; color: var(--dark-text); }
-  .cost-item .amount { font-size: 0.9rem; font-weight: 800; color: var(--blue); }
-  .cost-item .note { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
-
-  .fund-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; }
-  @media (max-width: 640px) { .fund-grid { grid-template-columns: 1fr; } }
-  .fund-card { background: var(--light-blue); border-radius: 20px; padding: 28px; }
-  .fund-card .icon { font-size: 2rem; display: block; margin-bottom: 12px; }
-  .fund-card h4 { font-size: 1rem; font-weight: 800; color: var(--dark-text); margin-bottom: 8px; }
-  .fund-card p { font-size: 0.875rem; margin: 0; line-height: 1.6; }
-
-  .donate-box {
-    background: white; border-radius: 24px; padding: 48px 40px;
-    text-align: center; border: 2px solid var(--pink);
-    box-shadow: 0 8px 40px rgba(233,30,140,0.1); margin: 48px 0;
+  .highlight-box strong {
+    color: white;
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 900;
+    margin-bottom: 8px;
   }
-  .donate-box .heart { font-size: 3rem; display: block; margin-bottom: 16px; }
-  .donate-box h3 { font-size: 1.5rem; font-weight: 900; color: var(--dark-text); margin-bottom: 12px; }
-  .donate-box p { max-width: 480px; margin: 0 auto 28px; }
 
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; border-radius: 99px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1rem; text-decoration: none; transition: all 0.2s; }
-  .btn-primary { background: linear-gradient(135deg, var(--blue), var(--dark-blue)); color: white; box-shadow: 0 4px 20px rgba(43,143,212,0.35); }
+  .tree-facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 32px 0;
+  }
+  @media (max-width: 640px) {
+    .tree-facts { grid-template-columns: 1fr; }
+  }
+  .tree-fact {
+    background: var(--light-blue);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+  }
+  .tree-fact .icon { font-size: 2rem; display: block; margin-bottom: 8px; }
+  .tree-fact h4 {
+    font-size: 0.95rem; font-weight: 800;
+    color: var(--dark-text); margin-bottom: 6px;
+  }
+  .tree-fact p {
+    font-size: 0.82rem; color: var(--muted);
+    margin: 0; line-height: 1.5;
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 28px; border-radius: 99px;
+    font-family: 'Nunito', sans-serif; font-weight: 800;
+    font-size: 1rem; text-decoration: none; cursor: pointer;
+    border: none; transition: all 0.2s;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--blue), var(--dark-blue));
+    color: white; box-shadow: 0 4px 20px rgba(43,143,212,0.4);
+  }
   .btn-primary:hover { transform: translateY(-2px); }
-  .btn-pink { background: var(--pink); color: white; box-shadow: 0 4px 20px rgba(233,30,140,0.35); font-size: 1.1rem; padding: 16px 40px; }
+  .btn-pink { background: var(--pink); color: white; }
   .btn-pink:hover { background: #c91578; transform: translateY(-2px); }
 
-  .tax-notice { background: var(--off-white); border: 1px solid var(--warm-gray); border-radius: 14px; padding: 16px 20px; font-size: 0.85rem; color: var(--muted); text-align: center; margin-top: 16px; }
+  /* FOUNDER SECTION */
+  .founder-section {
+    background: linear-gradient(135deg, var(--dark-blue), var(--dark-text));
+    padding: 72px 24px;
+    text-align: center;
+  }
+  .founder-photo {
+    width: 140px; height: 140px;
+    border-radius: 20px;
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid var(--blue);
+    margin: 0 auto 24px;
+    display: block;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  }
+  .founder-section h2 { color: white; margin-bottom: 6px; }
+  .founder-section .role { color: var(--pink); font-weight: 800; font-size: 0.9rem; margin-bottom: 20px; }
+  .founder-section p { color: rgba(255,255,255,0.7); max-width: 560px; margin: 0 auto 16px; }
+  .creds {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 8px; margin: 20px 0 28px;
+  }
+  .cred {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white; font-size: 0.8rem; font-weight: 700;
+    padding: 6px 16px; border-radius: 99px;
+  }
 
-  .grants-list { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }
-  .grant-item { background: white; border-radius: 16px; padding: 20px 24px; border: 1px solid var(--warm-gray); display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
-  .grant-item h4 { font-size: 0.95rem; font-weight: 800; color: var(--dark-text); margin-bottom: 4px; }
-  .grant-item p { font-size: 0.82rem; color: var(--muted); margin: 0; }
-  .grant-deadline { font-size: 0.8rem; font-weight: 800; color: var(--pink); white-space: nowrap; }
-
-  .other-ways { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
-  @media (max-width: 640px) { .other-ways { grid-template-columns: 1fr; } }
-  .way-card { background: var(--off-white); border: 1px solid var(--warm-gray); border-radius: 16px; padding: 24px; text-align: center; }
-  .way-card .icon { font-size: 2rem; display: block; margin-bottom: 12px; }
-  .way-card h4 { font-size: 0.95rem; font-weight: 800; color: var(--dark-text); margin-bottom: 8px; }
-  .way-card p { font-size: 0.82rem; margin: 0 0 16px; line-height: 1.5; }
-  .way-card a { font-size: 0.82rem; font-weight: 800; color: var(--blue); text-decoration: none; }
-  .way-card a:hover { text-decoration: underline; }
-  .way-card.featured { background: var(--light-blue); border-color: var(--blue); }
-
-  footer { background: var(--dark-text); color: rgba(255,255,255,0.5); padding: 40px 24px; text-align: center; font-size: 0.8rem; font-weight: 600; line-height: 1.8; }
+  footer {
+    background: var(--dark-text);
+    color: rgba(255,255,255,0.5);
+    padding: 40px 24px; text-align: center;
+    font-size: 0.8rem; font-weight: 600; line-height: 1.8;
+  }
   footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
   footer a:hover { color: var(--blue); }
   .footer-logo { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 20px; }
@@ -133,171 +309,104 @@
   </ul>
 </nav>
 
-<div class="page-hero">
-  <p class="label">Support Us</p>
-  <h1>Help keep it<br>free forever.</h1>
-  <p>A Little Help?! will never charge users, run ads, or sell data. That's a promise. But keeping that promise takes support.</p>
-</div>
+<section class="story-hero">
+  <div class="story-hero-bg"></div>
+  <div class="story-hero-overlay"></div>
+  <div class="story-hero-content">
+    <p class="label">Our Story</p>
+    <h1>Born from a <span>dream.</span><br>Built with love.</h1>
+    <p>A Little Help?! didn't start with a business plan. It started with a vision, a broken-open heart, and a refusal to let a dream stay a dream.</p>
+  </div>
+</section>
 
-<!-- THE COST OF FREE -->
-<section>
+<!-- CHAPTER 1: THE MOMENT -->
+<section class="story-section">
   <div class="container">
-    <p class="section-label">The Reality</p>
-    <h2>Free for users doesn't mean<br><span>free to build.</span></h2>
-    <div class="cost-highlight">
-      <p>Current monthly hard costs</p>
-      <span class="cost-number">~$50</span>
-      <h3>Remarkably lean. Intentionally so.</h3>
-      <p>Built by a solo founder using AI-assisted development, A Little Help?! runs on enterprise-grade infrastructure at near-zero cost. But "near-zero" isn't zero — and the human cost is real.</p>
-    </div>
-    <div class="costs-grid">
-      <div class="cost-item">
-        <div><div class="name">Database & Auth (Supabase)</div><div class="note">50K users free tier</div></div>
-        <div class="amount">$0</div>
+    <div class="chapter">
+      <div class="chapter-text">
+        <p class="label">Where It Began</p>
+        <h2>The world was <span>fracturing.</span><br>I went inward.</h2>
+        <p>It was one of the hardest stretches of my life. My partner was in a mental health crisis. The world felt like it was tearing apart at every seam. I had just marked 10 years sober — a decade of rebuilding myself from the inside out — and I felt the weight of a broken world in a way I couldn't ignore.</p>
+        <p>I didn't know what to do with that feeling. So I did what I'd learned to do in recovery: I got quiet. I went inward. I went to Colombia for a healing plant medicine retreat with indigenous teachers. I came home with more questions than answers — and then, on my second night of real sleep, I had a dream unlike anything I'd ever experienced.</p>
+        <blockquote>"It was more like a long break from this dimension. So real, so vividly instructional. Every step was laid out — from 'acquire the domain' to 'legalize the nonprofit through the state, then federally.' My 11-year-old son was walking me through the jungle, the one I had recently left, teaching me how to build a nonprofit, a website, and an app. When I woke up, I remembered every word, every step — and to be honest, I was a little terrified."</blockquote>
       </div>
-      <div class="cost-item">
-        <div><div class="name">Hosting (Vercel)</div><div class="note">100GB bandwidth free</div></div>
-        <div class="amount">$0</div>
-      </div>
-      <div class="cost-item">
-        <div><div class="name">Domain (Namecheap)</div><div class="note">Annual renewal</div></div>
-        <div class="amount">~$1.50/mo</div>
-      </div>
-      <div class="cost-item">
-        <div><div class="name">Private Email</div><div class="note">megan@alittlehelpapp.org</div></div>
-        <div class="amount">~$1/mo</div>
-      </div>
-      <div class="cost-item">
-        <div><div class="name">AI Development Tools</div><div class="note">Used to build the app</div></div>
-        <div class="amount">~$20/mo</div>
-      </div>
-      <div class="cost-item">
-        <div><div class="name">Website (Dorik)</div><div class="note">alittlehelpapp.org</div></div>
-        <div class="amount">~$15/mo</div>
+      <div class="chapter-image">
+        <img src="founderimage.jpeg" alt="Megan Guessford">
+        <div class="caption">Under the live oak — the tree that was always trying to tell me something.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHAT FUNDING ENABLES -->
-<section class="alt">
+<!-- CHAPTER 2: THE TREE -->
+<section class="story-section alt">
   <div class="container">
-    <p class="section-label">What Your Support Does</p>
-    <h2>Determination got us here.<br><span>Funding takes us further.</span></h2>
-    <p>A Little Help?! has been built entirely by its founder — hundreds of hours, personal funds, zero outside investment. Grant funding and donations will do what one person's determination cannot.</p>
-    <div class="fund-grid">
-      <div class="fund-card">
-        <span class="icon">📣</span>
-        <h4>Community Outreach</h4>
-        <p>Grassroots activation in DFW neighborhoods. Getting the app into the hands of people who need it most.</p>
+    <div class="chapter reverse">
+      <div class="chapter-image">
+        <img src="https://cdn.dorik.com/6848d84b526e65001e82cde6/images/boysintheliveoak-pMz28.jpeg" alt="Kids in the live oak tree">
+        <div class="caption">My sons in the branches — the tree that called to me before I knew what it was.</div>
       </div>
-      <div class="fund-card">
-        <span class="icon">⚖️</span>
-        <h4>Legal Consultation</h4>
-        <p>User agreement review and liability consultation before wide public launch. Protecting users and the mission.</p>
-      </div>
-      <div class="fund-card">
-        <span class="icon">🛡️</span>
-        <h4>Trust & Safety Infrastructure</h4>
-        <p>As the user base scales, safety tools and human moderation keep the community safe for everyone.</p>
-      </div>
-      <div class="fund-card">
-        <span class="icon">👥</span>
-        <h4>Team & Capacity</h4>
-        <p>Bringing on part-time help to grow with integrity — community managers, support staff, and development.</p>
+      <div class="chapter-text">
+        <p class="label">The Symbol</p>
+        <h2>The tree was always <span>trying to tell me something.</span></h2>
+        <p>Over a year before Colombia, I had visions of an oak tree — wide, full, sheltering. My 11-year-old and I were sitting in the branches. Little groups of people gathered in the shade below. I didn't know what it meant yet. I just held it.</p>
+        <p>After building the nonprofit, I found a tree near my house that kept calling to me. I'd walk past it, stop, feel something. I found out later it was a live oak — a tree that never loses its leaves, that grows a wide umbrella canopy, that provides shade year-round. Always present. Always sheltering.</p>
+        <p>That was the logo. I'd designed it before I knew what it was.</p>
+        <div class="tree-facts">
+          <div class="tree-fact">
+            <span class="icon">🌿</span>
+            <h4>Always in leaf</h4>
+            <p>Live oaks keep their leaves year-round. The community is always there.</p>
+          </div>
+          <div class="tree-fact">
+            <span class="icon">☂️</span>
+            <h4>Wide shade</h4>
+            <p>The broad canopy shelters everyone underneath — no exceptions.</p>
+          </div>
+          <div class="tree-fact">
+            <span class="icon">🌰</span>
+            <h4>The acorn</h4>
+            <p>Small acts that grow into something much larger than themselves.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- DONATE -->
-<section>
+<!-- CHAPTER 3: THE BUILD -->
+<section class="story-section">
   <div class="container">
-    <div class="donate-box">
-      <span class="heart">💙</span>
-      <h3>Every dollar keeps it free.</h3>
-      <p>A Little Help?! is a 501(c)(3) nonprofit. Your donation is tax-deductible and goes directly toward keeping the app free, safe, and growing.</p>
-      <a href="https://donorbox.org/launch-fund-for-a-little-help" class="btn btn-pink">Donate Now</a>
-      <div class="tax-notice">
-        A Little Help?! Inc. · EIN: 35-2983400 · 501(c)(3) Public Charity<br>
-        Donations are tax-deductible as allowed by law. Processed securely via Donorbox.
-      </div>
+    <div style="max-width: 680px; margin: 0 auto; text-align: center;">
+      <p class="label">The Build</p>
+      <h2>No tech background.<br>No funding. <span>No roadmap.</span></h2>
+      <p style="text-align: left;">I had never written a line of code. I had no technical background, no team, no outside funding, and no blueprint. What I had was the dream, a deep belief in people, and a willingness to figure it out one step at a time.</p>
+      <p style="text-align: left;">Using emerging AI tools and sheer determination, I built A Little Help?! from scratch — the app, the nonprofit, the legal structure, the brand, all of it — within months. Not because it was easy. Because it was necessary.</p>
+      <blockquote style="text-align: left;">"It's more than an app. It's a movement, a calling. A movement calling us home to each other."</blockquote>
+      <p style="text-align: left;">The 501(c)(3) was approved in June 2025. The app is live. The mission is clear. And the tree is still standing in that park in Arlington, wide and sheltering, leaves still on — just like it always was.</p>
+    </div>
+
+    <div class="highlight-box">
+      <strong>Expanding Consciousness Through Compassionate Action.</strong>
+      <p>When the person helping you looks like the person you've been taught to fear — consciousness expands. One micro-act of kindness at a time, we are rebuilding the social fabric of America.</p>
     </div>
   </div>
 </section>
 
-<!-- GRANTS -->
-<section class="alt">
-  <div class="container">
-    <p class="section-label">Grant Opportunities</p>
-    <h2>Building a <span>sustainable</span> foundation.</h2>
-    <p>We're actively pursuing grant funding from organizations aligned with our mission — community health, civic tech, women-led nonprofits, and mutual aid.</p>
-    <div class="grants-list">
-      <div class="grant-item">
-        <div>
-          <h4>Google for Nonprofits</h4>
-          <p>$10K/month in free ad grants + Google Workspace — TechSoup verification approved</p>
-        </div>
-        <span class="grant-deadline">Pending</span>
-      </div>
-      <div class="grant-item">
-        <div>
-          <h4>Walmart Spark Good</h4>
-          <p>$250–$5,000 community impact grants</p>
-        </div>
-        <span class="grant-deadline">May 2026</span>
-      </div>
-      <div class="grant-item">
-        <div>
-          <h4>Galaxy Grant</h4>
-          <p>$1,000–$3,500 rolling deadline</p>
-        </div>
-        <span class="grant-deadline">Rolling</span>
-      </div>
-      <div class="grant-item">
-        <div>
-          <h4>AWS Imagine Grant</h4>
-          <p>Cloud infrastructure funding for nonprofits</p>
-        </div>
-        <span class="grant-deadline">2026 TBD</span>
-      </div>
-      <div class="grant-item">
-        <div>
-          <h4>Texas Women's Foundation</h4>
-          <p>Supporting women-led organizations in Texas</p>
-        </div>
-        <span class="grant-deadline">Fall 2026</span>
-      </div>
-    </div>
-    <p style="margin-top:20px; font-size:0.875rem;">Interested in partnering or funding? <a href="mailto:megan@alittlehelpapp.org" style="color:var(--blue); font-weight:800;">Reach out directly →</a></p>
+<!-- FOUNDER -->
+<section class="founder-section">
+  <img src="founderimage2.jpeg" alt="Megan Guessford" class="founder-photo">
+  <h2>Megan Guessford</h2>
+  <p class="role">Founder & Executive Director</p>
+  <div class="creds">
+    <span class="cred">Mother of Three</span>
+    <span class="cred">10 Years Sober</span>
+    <span class="cred">Community Builder</span>
+    <span class="cred">Arlington, TX</span>
   </div>
-</section>
-
-<!-- OTHER WAYS -->
-<section>
-  <div class="container">
-    <p class="section-label">Other Ways to Help</p>
-    <h2>You don't have to donate<br><span>to make a difference.</span></h2>
-    <div class="other-ways">
-      <div class="way-card featured">
-        <span class="icon">🌱</span>
-        <h4>Be a Beta Tester</h4>
-        <p>In the DFW area? We're hand-selecting our first neighbors. Apply to join the beta and help shape the community from the ground up.</p>
-        <a href="https://bit.ly/alittlehelpwaitlist">Apply Now →</a>
-      </div>
-      <div class="way-card">
-        <span class="icon">📣</span>
-        <h4>Spread the Word</h4>
-        <p>Share on social. Tell a neighbor. Tag us. Every share matters.</p>
-        <a href="https://instagram.com/alittlehelpapp">@alittlehelpapp →</a>
-      </div>
-      <div class="way-card">
-        <span class="icon">✉️</span>
-        <h4>Get in Touch</h4>
-        <p>Partnerships, press, speaking, volunteering — we want to hear from you.</p>
-        <a href="mailto:megan@alittlehelpapp.org">Email Megan →</a>
-      </div>
-    </div>
+  <p>I built the app, established the nonprofit, and refused to let a dream stay a dream — all without a technical background, a team, or outside funding.</p>
+  <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
+    <a href="mailto:megan@alittlehelpapp.org" class="btn btn-pink">Get in Touch</a>
   </div>
 </section>
 
@@ -312,11 +421,12 @@
     <a href="mailto:megan@alittlehelpapp.org">megan@alittlehelpapp.org</a> ·
     <a href="https://instagram.com/alittlehelpapp">Instagram</a> · <a href="https://tiktok.com/@alittlehelpapp">TikTok</a> · @alittlehelpapp
   </p>
-  <p style="margin-top: 16px; color: rgba(255,255,255,0.25); font-size: 0.75rem;">Free forever. No ads. No data selling. Built with love in Arlington, TX. 🌱</p>
 </footer>
 
 <script>
-function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+function toggleNav() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
 </script>
 </body>
 </html>
