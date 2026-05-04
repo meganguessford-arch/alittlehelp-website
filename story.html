@@ -9,94 +9,54 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --blue: #2B8FD4;
-    --dark-blue: #1A6FAD;
-    --light-blue: #E8F4FD;
-    --pink: #e91e8c;
-    --off-white: #F8F7F4;
-    --warm-gray: #EAE8E3;
-    --dark-text: #1C2B3A;
-    --muted: #6B7F8E;
-    --white: #ffffff;
+    --blue: #2B8FD4; --dark-blue: #1A6FAD; --light-blue: #E8F4FD;
+    --pink: #e91e8c; --off-white: #F8F7F4; --warm-gray: #EAE8E3;
+    --dark-text: #1C2B3A; --muted: #6B7F8E; --white: #ffffff;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Nunito', sans-serif;
-    background: var(--off-white);
-    color: var(--dark-text);
-    overflow-x: hidden;
-  }
+  body { font-family: 'Nunito', sans-serif; background: var(--off-white); color: var(--dark-text); overflow-x: hidden; }
 
-  /* NAV */
   nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--warm-gray);
-    padding: 0 24px;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--warm-gray); padding: 0 24px;
+    height: 64px; display: flex; align-items: center; justify-content: space-between;
   }
-  .nav-logo {
-    display: flex; align-items: center; gap: 10px; text-decoration: none;
-  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
   .nav-logo img { height: 40px; width: 40px; object-fit: contain; }
   .nav-logo span { font-weight: 900; font-size: 1.1rem; color: var(--blue); }
   .nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
-  .nav-links a {
-    text-decoration: none; font-weight: 700; font-size: 0.875rem;
-    color: var(--dark-text); padding: 8px 14px; border-radius: 99px; transition: all 0.2s;
-  }
+  .nav-links a { text-decoration: none; font-weight: 700; font-size: 0.875rem; color: var(--dark-text); padding: 8px 14px; border-radius: 99px; transition: all 0.2s; }
   .nav-links a:hover { background: var(--light-blue); color: var(--blue); }
   .nav-links .btn-nav { background: var(--pink); color: white; padding: 8px 20px; }
   .nav-links .btn-nav:hover { background: #c91578; color: white; }
-  .hamburger {
-    display: none; background: none; border: none; cursor: pointer;
-    padding: 8px; flex-direction: column; gap: 5px;
-  }
+  .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
   .hamburger span { display: block; width: 24px; height: 2px; background: var(--dark-text); border-radius: 2px; }
   @media (max-width: 768px) {
     .hamburger { display: flex; }
-    .nav-links {
-      display: none; position: fixed; top: 64px; left: 0; right: 0;
-      background: white; flex-direction: column; padding: 16px;
-      border-bottom: 1px solid var(--warm-gray); gap: 4px;
-    }
+    .nav-links { display: none; position: fixed; top: 64px; left: 0; right: 0; background: white; flex-direction: column; padding: 16px; border-bottom: 1px solid var(--warm-gray); gap: 4px; }
     .nav-links.open { display: flex; }
     .nav-links a { width: 100%; text-align: center; }
   }
 
-  /* HERO */
   .story-hero {
-    min-height: 60vh;
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    padding-top: 64px;
-    overflow: hidden;
+    min-height: 60vh; position: relative;
+    display: flex; align-items: flex-end; padding-top: 64px; overflow: hidden;
   }
   .story-hero-bg {
     position: absolute; inset: 0;
-    background-image: url('https://cdn.dorik.com/6848d84b526e65001e82cde6/images/IMG_4826-Nooh9.jpg');
-    background-size: cover;
-    background-position: center 20%;
-    filter: brightness(0.35);
+    background-image: url('colombiafog.jpeg');
+    background-size: cover; background-position: center 30%;
+    filter: brightness(0.4);
   }
   .story-hero-overlay {
     position: absolute; inset: 0;
     background: linear-gradient(to bottom, transparent 30%, rgba(28,43,58,0.95) 100%);
   }
   .story-hero-content {
-    position: relative; z-index: 2;
-    padding: 48px 40px;
-    max-width: 800px;
-    animation: fadeup 1s ease both;
+    position: relative; z-index: 2; padding: 48px 40px;
+    max-width: 800px; animation: fadeup 1s ease both;
   }
   @keyframes fadeup {
     from { opacity: 0; transform: translateY(24px); }
@@ -108,8 +68,7 @@
   }
   .story-hero-content h1 {
     font-size: clamp(2rem, 5vw, 3.2rem);
-    font-weight: 900; color: white; line-height: 1.15;
-    margin-bottom: 16px;
+    font-weight: 900; color: white; line-height: 1.15; margin-bottom: 16px;
   }
   .story-hero-content h1 span { color: var(--pink); }
   .story-hero-content p {
@@ -117,173 +76,103 @@
     font-weight: 600; max-width: 560px; line-height: 1.7;
   }
 
-  /* CONTENT */
   .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
-
-  .story-section {
-    padding: 72px 24px;
-  }
-
+  .story-section { padding: 72px 24px; }
   .story-section.alt { background: white; }
 
-  .chapter {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    align-items: center;
-  }
+  .chapter { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
   @media (max-width: 768px) {
     .chapter { grid-template-columns: 1fr; }
     .chapter .chapter-image { order: -1; }
   }
-
   .chapter.reverse .chapter-image { order: 2; }
-  .chapter.reverse .chapter-text  { order: 1; }
-  @media (max-width: 768px) {
-    .chapter.reverse .chapter-image { order: -1; }
-  }
+  .chapter.reverse .chapter-text { order: 1; }
+  @media (max-width: 768px) { .chapter.reverse .chapter-image { order: -1; } }
 
   .chapter-image {
-    border-radius: 24px;
-    overflow: hidden;
+    border-radius: 24px; overflow: hidden;
     border: 2px solid var(--warm-gray);
     box-shadow: 0 8px 40px rgba(0,0,0,0.1);
   }
-  .chapter-image img {
-    width: 100%; display: block;
-  }
+  .chapter-image img { width: 100%; display: block; max-height: 420px; object-fit: cover; object-position: center top; }
   .chapter-image .caption {
-    padding: 10px 16px;
-    font-size: 0.8rem; font-weight: 700;
-    color: var(--muted); background: white;
-    text-align: center; font-style: italic;
+    padding: 10px 16px; font-size: 0.8rem; font-weight: 700;
+    color: var(--muted); background: white; text-align: center; font-style: italic;
   }
 
-  .label {
-    font-size: 0.75rem; font-weight: 800; letter-spacing: 0.15em;
-    text-transform: uppercase; color: var(--pink); margin-bottom: 12px;
-  }
-
-  h2 {
-    font-size: clamp(1.6rem, 3vw, 2.2rem);
-    font-weight: 900; color: var(--dark-text);
-    line-height: 1.2; margin-bottom: 20px;
-  }
+  .label { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); margin-bottom: 12px; }
+  h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; color: var(--dark-text); line-height: 1.2; margin-bottom: 20px; }
   h2 span { color: var(--blue); }
-
-  p {
-    font-size: 1rem; font-weight: 600;
-    color: var(--muted); line-height: 1.8;
-    margin-bottom: 16px;
-  }
+  p { font-size: 1rem; font-weight: 600; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
 
   blockquote {
-    font-size: 1.15rem; font-weight: 700;
-    font-style: italic; color: var(--blue);
-    border-left: 4px solid var(--pink);
-    padding: 12px 20px;
-    margin: 24px 0;
-    line-height: 1.6;
-    background: var(--light-blue);
-    border-radius: 0 12px 12px 0;
+    font-size: 1.15rem; font-weight: 700; font-style: italic; color: var(--blue);
+    border-left: 4px solid var(--pink); padding: 12px 20px; margin: 24px 0;
+    line-height: 1.6; background: var(--light-blue); border-radius: 0 12px 12px 0;
   }
 
   .highlight-box {
-    background: var(--dark-text);
-    border-radius: 20px;
-    padding: 36px 40px;
-    margin: 48px 0;
-    text-align: center;
+    background: var(--dark-text); border-radius: 20px;
+    padding: 36px 40px; margin: 48px 0; text-align: center;
   }
-  .highlight-box p {
-    color: rgba(255,255,255,0.75);
-    font-size: 1.1rem;
-    margin-bottom: 0;
-  }
-  .highlight-box strong {
-    color: white;
-    display: block;
-    font-size: 1.3rem;
-    font-weight: 900;
-    margin-bottom: 8px;
-  }
+  .highlight-box p { color: rgba(255,255,255,0.75); font-size: 1.1rem; margin-bottom: 0; }
+  .highlight-box strong { color: white; display: block; font-size: 1.3rem; font-weight: 900; margin-bottom: 8px; }
 
-  .tree-facts {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin: 32px 0;
-  }
-  @media (max-width: 640px) {
-    .tree-facts { grid-template-columns: 1fr; }
-  }
-  .tree-fact {
-    background: var(--light-blue);
-    border-radius: 16px;
-    padding: 24px;
-    text-align: center;
-  }
+  .tree-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0; }
+  @media (max-width: 640px) { .tree-facts { grid-template-columns: 1fr; } }
+  .tree-fact { background: var(--light-blue); border-radius: 16px; padding: 24px; text-align: center; }
   .tree-fact .icon { font-size: 2rem; display: block; margin-bottom: 8px; }
-  .tree-fact h4 {
-    font-size: 0.95rem; font-weight: 800;
-    color: var(--dark-text); margin-bottom: 6px;
-  }
-  .tree-fact p {
-    font-size: 0.82rem; color: var(--muted);
-    margin: 0; line-height: 1.5;
-  }
+  .tree-fact h4 { font-size: 0.95rem; font-weight: 800; color: var(--dark-text); margin-bottom: 6px; }
+  .tree-fact p { font-size: 0.82rem; color: var(--muted); margin: 0; line-height: 1.5; }
 
-  .btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 14px 28px; border-radius: 99px;
-    font-family: 'Nunito', sans-serif; font-weight: 800;
-    font-size: 1rem; text-decoration: none; cursor: pointer;
-    border: none; transition: all 0.2s;
+  .colombia-section { padding: 72px 24px; background: var(--dark-text); }
+  .colombia-section .label { color: var(--pink); }
+  .colombia-section h2 { color: white; }
+  .colombia-section p { color: rgba(255,255,255,0.75); }
+  .colombia-section blockquote { background: rgba(255,255,255,0.06); border-left-color: var(--pink); color: rgba(255,255,255,0.9); }
+
+  .colombia-images { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin: 32px 0; }
+  @media (max-width: 640px) { .colombia-images { grid-template-columns: 1fr; } }
+  .colombia-images img { width: 100%; border-radius: 20px; object-fit: cover; display: block; height: 340px; }
+
+  .gratitude-box {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 24px; padding: 32px;
+    display: grid; grid-template-columns: 180px 1fr;
+    gap: 28px; align-items: center; margin-top: 40px;
   }
-  .btn-primary {
-    background: linear-gradient(135deg, var(--blue), var(--dark-blue));
-    color: white; box-shadow: 0 4px 20px rgba(43,143,212,0.4);
+  @media (max-width: 640px) { .gratitude-box { grid-template-columns: 1fr; text-align: center; } }
+  .gratitude-box img {
+    width: 180px; height: 220px; object-fit: cover; object-position: center top;
+    border-radius: 16px; border: 2px solid rgba(255,255,255,0.2);
   }
+  @media (max-width: 640px) { .gratitude-box img { width: 100%; height: 240px; } }
+  .gratitude-text h4 { font-size: 1rem; font-weight: 900; color: white; margin-bottom: 8px; }
+  .gratitude-text p { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 16px; line-height: 1.7; }
+  .gratitude-links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .gratitude-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+    color: white; font-size: 0.82rem; font-weight: 800;
+    padding: 8px 16px; border-radius: 99px; text-decoration: none;
+  }
+  .gratitude-link:hover { background: rgba(255,255,255,0.2); }
+
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 99px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1rem; text-decoration: none; cursor: pointer; border: none; transition: all 0.2s; }
+  .btn-primary { background: linear-gradient(135deg, var(--blue), var(--dark-blue)); color: white; box-shadow: 0 4px 20px rgba(43,143,212,0.4); }
   .btn-primary:hover { transform: translateY(-2px); }
   .btn-pink { background: var(--pink); color: white; }
   .btn-pink:hover { background: #c91578; transform: translateY(-2px); }
 
-  /* FOUNDER SECTION */
-  .founder-section {
-    background: linear-gradient(135deg, var(--dark-blue), var(--dark-text));
-    padding: 72px 24px;
-    text-align: center;
-  }
-  .founder-photo {
-    width: 140px; height: 140px;
-    border-radius: 20px;
-    object-fit: cover;
-    object-position: center top;
-    border: 3px solid var(--blue);
-    margin: 0 auto 24px;
-    display: block;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-  }
+  .founder-section { background: linear-gradient(135deg, var(--dark-blue), var(--dark-text)); padding: 72px 24px; text-align: center; }
+  .founder-photo { width: 140px; height: 140px; border-radius: 20px; object-fit: cover; object-position: center top; border: 3px solid var(--blue); margin: 0 auto 24px; display: block; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
   .founder-section h2 { color: white; margin-bottom: 6px; }
   .founder-section .role { color: var(--pink); font-weight: 800; font-size: 0.9rem; margin-bottom: 20px; }
   .founder-section p { color: rgba(255,255,255,0.7); max-width: 560px; margin: 0 auto 16px; }
-  .creds {
-    display: flex; flex-wrap: wrap; justify-content: center;
-    gap: 8px; margin: 20px 0 28px;
-  }
-  .cred {
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-    color: white; font-size: 0.8rem; font-weight: 700;
-    padding: 6px 16px; border-radius: 99px;
-  }
+  .creds { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 20px 0 28px; }
+  .cred { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; font-size: 0.8rem; font-weight: 700; padding: 6px 16px; border-radius: 99px; }
 
-  footer {
-    background: var(--dark-text);
-    color: rgba(255,255,255,0.5);
-    padding: 40px 24px; text-align: center;
-    font-size: 0.8rem; font-weight: 600; line-height: 1.8;
-  }
+  footer { background: var(--dark-text); color: rgba(255,255,255,0.5); padding: 40px 24px; text-align: center; font-size: 0.8rem; font-weight: 600; line-height: 1.8; }
   footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
   footer a:hover { color: var(--blue); }
   .footer-logo { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 20px; }
@@ -338,7 +227,33 @@
   </div>
 </section>
 
-<!-- CHAPTER 2: THE TREE -->
+<!-- COLOMBIA -->
+<section class="colombia-section">
+  <div class="container">
+    <p class="label">Before the Dream</p>
+    <h2>Where the <span style="color: var(--pink);">healing happened</span></h2>
+    <p>Before the dream, there was Colombia. I traveled to the Sibundoy Valley in Putumayo — the Sacred Valley of the Kamëntsá people — and spent time at Shanayoy Healing Center with Taita Juan Bautista Agreda, Erika Salazar, and their families. Erika has worked alongside Taita Juan for over 20 years and lives on the land with her husband and children, rooted in the medicine and the earth. It was there, in the maloka, surrounded by medicinal plants and mist-covered mountains, that something in me opened. I came home changed. And two nights later, I had the dream that built all of this.</p>
+    <p>I owe a debt of gratitude I can never fully repay. But I can point people toward them.</p>
+    <div class="colombia-images">
+      <img src="colombiafog.jpeg" alt="Misty morning in Sibundoy Valley, Colombia">
+      <img src="trumpetflower.jpeg" alt="Angel's Trumpet — sacred plant used in dream work by the Kamëntsá people">
+    </div>
+    <div class="gratitude-box">
+      <img src="rosieandme.jpg" alt="Megan and Rosie in Colombia">
+      <div class="gratitude-text">
+        <h4>With deep gratitude 💙</h4>
+        <p>That's me with Rosie — Erika's daughter. We had an immediate connection, both of us with dirt on our hands and a little plant between us. It's one of the clearest pictures I have of what A Little Help?! is actually about.</p>
+        <p style="font-size:0.85rem; margin-bottom:16px;">The Kamëntsá people of the Sibundoy Valley have stewarded sacred plants, healing traditions, and ancestral knowledge for generations. Their wisdom deserves to be honored and supported.</p>
+        <div class="gratitude-links">
+          <a href="https://www.shanayoy.org" target="_blank" class="gratitude-link">🌿 Shanayoy Healing Center</a>
+          <a href="https://www.oioc.co" target="_blank" class="gratitude-link">🌱 OIOC — Support the Kamëntsá</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE TREE -->
 <section class="story-section alt">
   <div class="container">
     <div class="chapter reverse">
@@ -374,7 +289,7 @@
   </div>
 </section>
 
-<!-- CHAPTER 3: THE BUILD -->
+<!-- THE BUILD -->
 <section class="story-section">
   <div class="container">
     <div style="max-width: 680px; margin: 0 auto; text-align: center;">
@@ -385,7 +300,6 @@
       <blockquote style="text-align: left;">"It's more than an app. It's a movement, a calling. A movement calling us home to each other."</blockquote>
       <p style="text-align: left;">The 501(c)(3) was approved in June 2025. The app is live. The mission is clear. And the tree is still standing in that park in Arlington, wide and sheltering, leaves still on — just like it always was.</p>
     </div>
-
     <div class="highlight-box">
       <strong>Expanding Consciousness Through Compassionate Action.</strong>
       <p>When the person helping you looks like the person you've been taught to fear — consciousness expands. One micro-act of kindness at a time, we are rebuilding the social fabric of America.</p>
@@ -424,9 +338,7 @@
 </footer>
 
 <script>
-function toggleNav() {
-  document.getElementById('navLinks').classList.toggle('open');
-}
+function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
 </script>
 </body>
 </html>
