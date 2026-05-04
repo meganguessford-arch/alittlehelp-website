@@ -42,21 +42,31 @@
 
   .story-hero {
     min-height: 60vh; position: relative;
-    display: flex; align-items: flex-end; padding-top: 64px; overflow: hidden;
+    display: flex; align-items: center; padding-top: 64px; overflow: hidden;
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--dark-text) 100%);
   }
-  .story-hero-bg {
-    position: absolute; inset: 0;
-    background-image: url('malokawindow.jpeg');
-    background-size: cover; background-position: center center;
-    filter: brightness(0.55);
-  }
-  .story-hero-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(to bottom, rgba(28,43,58,0.2) 0%, rgba(28,43,58,0.85) 100%);
-  }
+  .story-hero-bg { display: none; }
+  .story-hero-overlay { display: none; }
   .story-hero-content {
     position: relative; z-index: 2; padding: 48px 40px;
-    max-width: 800px; animation: fadeup 1s ease both;
+    max-width: 500px; animation: fadeup 1s ease both; flex: 1;
+  }
+  .story-hero-image {
+    flex: 1; padding: 40px 40px 40px 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .story-hero-image img {
+    width: 100%; max-width: 420px; height: 380px;
+    object-fit: cover; object-position: center;
+    border-radius: 24px;
+    border: 3px solid rgba(255,255,255,0.2);
+    box-shadow: 0 16px 60px rgba(0,0,0,0.5);
+  }
+  @media (max-width: 768px) {
+    .story-hero { flex-direction: column; padding-bottom: 40px; }
+    .story-hero-image { padding: 0 24px 40px; }
+    .story-hero-image img { max-width: 100%; height: 260px; }
+    .story-hero-content { padding: 48px 24px 24px; max-width: 100%; }
   }
   @keyframes fadeup {
     from { opacity: 0; transform: translateY(24px); }
@@ -205,6 +215,9 @@
     <p class="label">Our Story</p>
     <h1>Born from a <span>dream.</span><br>Built with love.</h1>
     <p>A Little Help?! didn't start with a business plan. It started with a vision, a broken-open heart, and a refusal to let a dream stay a dream.</p>
+  </div>
+  <div class="story-hero-image">
+    <img src="Malokaview.jpeg" alt="View from inside the maloka at Shanayoy, Sibundoy Valley, Colombia">
   </div>
 </section>
 
