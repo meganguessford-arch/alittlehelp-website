@@ -90,13 +90,16 @@
 
   /* SCREENSHOTS */
   .screens-row {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 48px; justify-items: center;
+    display: flex; flex-wrap: wrap; gap: 20px; margin-top: 48px; justify-content: center;
   }
-  @media (max-width: 640px) { .screens-row { grid-template-columns: 1fr 1fr; } }
-  .screen-wrap { display: flex; flex-direction: column; max-width: 200px; width: 100%; }
+  .screen-wrap { display: flex; flex-direction: column; width: 220px; flex-shrink: 0; }
   .screen-wrap img {
-    width: 100%; height: auto; border-radius: 20px; border: 2px solid var(--blue);
+    width: 220px; height: auto; border-radius: 20px; border: 2px solid var(--blue);
     box-shadow: 0 8px 32px rgba(43,143,212,0.12); display: block;
+  }
+  @media (max-width: 520px) {
+    .screen-wrap { width: 140px; }
+    .screen-wrap img { width: 140px; }
   }
   .screen-wrap .slabel { text-align: center; font-size: 0.8rem; font-weight: 700; color: var(--muted); margin-top: 10px; }
 
