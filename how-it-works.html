@@ -95,9 +95,8 @@
   @media (max-width: 640px) { .screens-row { grid-template-columns: 1fr 1fr; } }
   .screen-wrap { display: flex; flex-direction: column; max-width: 200px; width: 100%; }
   .screen-wrap img {
-    width: 100%; height: 380px; border-radius: 20px; border: 2px solid var(--blue);
-    box-shadow: 0 8px 32px rgba(43,143,212,0.12);
-    object-fit: cover; object-position: top;
+    width: 100%; height: auto; border-radius: 20px; border: 2px solid var(--blue);
+    box-shadow: 0 8px 32px rgba(43,143,212,0.12); display: block;
   }
   .screen-wrap .slabel { text-align: center; font-size: 0.8rem; font-weight: 700; color: var(--muted); margin-top: 10px; }
 
