@@ -3,135 +3,169 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy · Terms · Disclaimer — A Little Help?!</title>
-<meta name="description" content="Privacy Policy, Terms of Service, and Disclaimer for A Little Help?! — a free, privacy-first community app.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<title>Privacy, terms, and disclaimer | A Little Help?!</title>
+<meta name="description" content="Privacy policy, terms of service, and disclaimer for A Little Help?!, a free, privacy-first community app from a 501(c)(3) nonprofit.">
+<link rel="icon" href="logo192.png">
+<link rel="stylesheet" href="nunito.css">
 <style>
   :root {
-    --blue: #2B8FD4; --dark-blue: #1A6FAD; --light-blue: #E8F4FD;
-    --pink: #e91e8c; --off-white: #F8F7F4; --warm-gray: #EAE8E3;
-    --dark-text: #1C2B3A; --muted: #6B7F8E; --white: #ffffff;
+    --paper: #F8F7F4; --white: #ffffff; --ink: #1C2B3A; --muted: #4F6273;
+    --blue: #1A7DB4; --blue-dark: #145F8A; --tint: #EDF5FA;
+    --pink: #D81B80; --pink-dark: #B5146A; --line: #E4E1DA;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Nunito', sans-serif; background: var(--off-white); color: var(--dark-text); overflow-x: hidden; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; font-size: 1.0625rem; overflow-x: hidden; }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: var(--blue-dark); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
 
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--warm-gray); padding: 0 24px;
-    height: 64px; display: flex; align-items: center; justify-content: space-between;
-  }
+  nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--line); }
+  .nav-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; height: 68px; display: flex; align-items: center; justify-content: space-between; }
   .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .nav-logo img { height: 40px; width: 40px; object-fit: contain; }
-  .nav-logo span { font-weight: 900; font-size: 1.1rem; color: var(--blue); }
-  .nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
-  .nav-links a { text-decoration: none; font-weight: 700; font-size: 0.875rem; color: var(--dark-text); padding: 8px 14px; border-radius: 99px; transition: all 0.2s; }
-  .nav-links a:hover { background: var(--light-blue); color: var(--blue); }
-  .nav-links .btn-nav { background: var(--pink); color: white; padding: 8px 20px; }
-  .nav-links .btn-nav:hover { background: #c91578; color: white; }
-  .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
-  .hamburger span { display: block; width: 24px; height: 2px; background: var(--dark-text); border-radius: 2px; }
-  @media (max-width: 768px) {
-    .hamburger { display: flex; }
-    .nav-links { display: none; position: fixed; top: 64px; left: 0; right: 0; background: white; flex-direction: column; padding: 16px; border-bottom: 1px solid var(--warm-gray); gap: 4px; }
+  .nav-logo img { height: 44px; width: 44px; object-fit: contain; }
+  .nav-logo span { font-weight: 900; font-size: 1.15rem; color: var(--ink); }
+  .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
+  .nav-links a { text-decoration: none; font-weight: 700; font-size: 0.95rem; color: var(--ink); padding: 8px 14px; border-radius: 8px; }
+  .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--blue-dark); background: var(--tint); }
+  .nav-links .nav-donate { background: var(--pink); color: var(--white); margin-left: 8px; }
+  .nav-links .nav-donate:hover { background: var(--pink-dark); color: var(--white); }
+  .menu-btn { display: none; background: none; border: 1px solid var(--line); border-radius: 8px; cursor: pointer; padding: 8px 12px; font: inherit; font-weight: 800; color: var(--ink); }
+  @media (max-width: 800px) {
+    .menu-btn { display: block; }
+    .nav-links { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--white); flex-direction: column; align-items: stretch; padding: 12px 24px 20px; border-bottom: 1px solid var(--line); }
     .nav-links.open { display: flex; }
-    .nav-links a { width: 100%; text-align: center; }
+    .nav-links .nav-donate { margin: 8px 0 0; text-align: center; }
   }
 
-  .page-hero {
-    padding: 120px 24px 60px;
-    background: linear-gradient(135deg, var(--dark-blue), var(--dark-text));
-    text-align: center;
-  }
-  .page-hero .label { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); margin-bottom: 12px; }
-  .page-hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: white; margin-bottom: 16px; }
-  .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,0.7); font-weight: 600; max-width: 540px; margin: 0 auto; line-height: 1.7; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .narrow { max-width: 720px; }
+  section { padding: 72px 0; }
+  section[id] { scroll-margin-top: 80px; }
+  section.tint { background: var(--tint); }
+  section.white { background: var(--white); }
+  .page-top { padding: 72px 0 40px; }
+  h1 { font-size: clamp(2.2rem, 5.5vw, 3.4rem); font-weight: 900; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 18px; max-width: 18ch; }
+  h2 { font-size: clamp(1.6rem, 3.6vw, 2.2rem); font-weight: 900; line-height: 1.2; margin-bottom: 18px; max-width: 24ch; }
+  h3 { font-size: 1.15rem; font-weight: 800; line-height: 1.35; margin: 28px 0 8px; }
+  p { margin-bottom: 16px; max-width: 68ch; }
+  .lede { font-size: 1.2rem; color: var(--muted); font-weight: 600; max-width: 56ch; }
+  .muted { color: var(--muted); }
+  .small { font-size: 0.9rem; }
 
-  .container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
-  .legal-section { padding: 60px 24px; }
-  .legal-section.alt { background: white; }
+  .btn { display: inline-block; text-decoration: none; font-weight: 800; padding: 13px 26px; border-radius: 10px; background: var(--pink); color: var(--white); border: 2px solid var(--pink); }
+  .btn:hover { background: var(--pink-dark); border-color: var(--pink-dark); color: var(--white); }
+  .btn-quiet { background: transparent; color: var(--ink); border-color: var(--ink); }
+  .btn-quiet:hover { background: var(--ink); border-color: var(--ink); color: var(--white); }
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+  .text-link { font-weight: 800; color: var(--blue-dark); }
 
-  .legal-section h2 {
-    font-size: 1.5rem; font-weight: 900; color: var(--dark-text);
-    margin-bottom: 20px; padding-bottom: 12px;
-    border-bottom: 2px solid var(--warm-gray);
-  }
-  .legal-section h3 { font-size: 1rem; font-weight: 800; color: var(--dark-text); margin: 24px 0 8px; }
-  .legal-section p { font-size: 0.95rem; font-weight: 600; color: var(--muted); line-height: 1.8; margin-bottom: 14px; }
-  .legal-section a { color: var(--blue); text-decoration: none; font-weight: 700; }
-  .legal-section a:hover { text-decoration: underline; }
-  .updated { font-size: 0.8rem; color: var(--muted); font-weight: 700; margin-bottom: 28px; display: block; }
+  .rows { border-top: 1px solid var(--line); margin: 24px 0 8px; max-width: 760px; }
+  .row { display: flex; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .row .e { font-size: 1.5rem; line-height: 1.3; flex: 0 0 auto; width: 2rem; text-align: center; }
+  .row p { margin: 0; }
+  .row b { font-weight: 800; }
 
-  .highlight-box { background: var(--light-blue); border-radius: 16px; padding: 24px 28px; margin: 24px 0; }
-  .highlight-box p { margin: 0; color: var(--dark-text); }
+  .media { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 48px; align-items: start; }
+  .media.logo-left { grid-template-columns: 220px minmax(0, 1fr); }
+  @media (max-width: 760px) { .media, .media.logo-left { grid-template-columns: 1fr; gap: 24px; } .media.logo-left img { width: 160px; } }
+  figure { margin: 24px 0; }
+  figure img { border-radius: 8px; width: 100%; }
+  figcaption { font-size: 0.95rem; color: var(--muted); margin-top: 10px; }
 
-  footer { background: var(--dark-text); color: rgba(255,255,255,0.5); padding: 40px 24px; text-align: center; font-size: 0.8rem; font-weight: 600; line-height: 1.8; }
-  footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
-  footer a:hover { color: var(--blue); }
-  .footer-logo { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 20px; }
-  .footer-logo img { height: 36px; filter: opacity(0.7); }
-  .footer-logo span { font-size: 1rem; font-weight: 800; color: rgba(255,255,255,0.6); }
+  .callout { border-left: 4px solid var(--blue); padding: 4px 0 4px 20px; margin: 24px 0; max-width: 64ch; }
+  .callout p { margin: 0; font-weight: 700; }
+
+  footer { background: var(--ink); color: #C9D3DC; padding: 48px 0; font-size: 0.95rem; }
+  footer .wrap { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px 48px; align-items: start; }
+  footer a { color: var(--white); }
+  footer p { margin-bottom: 8px; max-width: none; }
+  .foot-name { display: flex; align-items: center; gap: 10px; font-weight: 900; color: var(--white); font-size: 1.1rem; margin-bottom: 12px; }
+  .foot-name img { width: 40px; height: 40px; object-fit: contain; background: var(--white); border-radius: 50%; padding: 3px; }
+  .foot-links { list-style: none; }
+  .foot-links li { margin-bottom: 6px; }
+  .foot-promise { grid-column: 1 / -1; border-top: 1px solid #33475A; padding-top: 16px; color: #9FB0BF; }
+  @media (max-width: 640px) { footer .wrap { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="index.html" class="nav-logo">
-    <img src="transparentlogo.png" alt="A Little Help?! Logo">
-    <span>A Little Help?!</span>
-  </a>
-  <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="how-it-works.html">How It Works</a></li>
-    <li><a href="story.html">Our Story</a></li>
-    <li><a href="support.html">Support Us</a></li>
-    <li><a href="https://donorbox.org/launch-fund-for-a-little-help" class="btn-nav">Donate 💙</a></li>
-  </ul>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="transparentlogo.png" alt="" width="44" height="44">
+      <span>A Little Help?!</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="how-it-works.html">How it works</a></li>
+      <li><a href="story.html">Our story</a></li>
+      <li><a href="support.html">Support us</a></li>
+      <li><a href="https://donorbox.org/launch-fund-for-a-little-help" class="nav-donate">Donate 💙</a></li>
+    </ul>
+  </div>
 </nav>
 
-<div class="page-hero">
-  <p class="label">Legal</p>
-  <h1>Privacy · Terms · Disclaimer</h1>
-  <p>We believe in being transparent about how we operate. Here's everything you need to know — in plain language.</p>
-</div>
+<main>
 
-<!-- PRIVACY POLICY -->
-<section class="legal-section">
-  <div class="container">
-    <h2>Privacy Policy</h2>
-    <span class="updated">Last updated: May 2026</span>
-    <div class="highlight-box">
-      <p>The short version: We collect only what we need. We never sell your data. We never run ads. Your privacy is not a feature — it's the foundation.</p>
-    </div>
+<section class="page-top">
+  <div class="wrap narrow">
+    <h1>Privacy, terms, and disclaimer</h1>
+    <p class="lede">How we handle your information and how the app works, in plain language.</p>
+    <p class="muted"><a class="text-link" href="#privacy">Privacy policy</a> &nbsp;|&nbsp; <a class="text-link" href="#terms">Terms of service</a> &nbsp;|&nbsp; <a class="text-link" href="#disclaimer">Disclaimer</a></p>
+  </div>
+</section>
+
+<section class="white" id="privacy">
+  <div class="wrap narrow">
+    <h2>Privacy policy</h2>
+    <p class="muted small">Last updated: November 2026</p>
+    <div class="callout"><p>The short version: we collect only what we need, we never sell your data, and we never use it for advertising. Your privacy is the foundation of this app.</p></div>
+
     <h3>Who we are</h3>
-    <p>A Little Help?! Inc. is a 501(c)(3) nonprofit organization based in Arlington, TX (EIN: 35-2983400). We operate a free community app that connects neighbors through small acts of kindness.</p>
+    <p>A Little Help?! Inc. is a 501(c)(3) nonprofit organization based in Arlington, TX (EIN 35&#8209;2983400). We run a free community app that connects neighbors through small acts of kindness.</p>
+
     <h3>What we collect</h3>
-    <p>To create an account, we collect your email address, first name, and zip code. Your first name and zip code are shown publicly in the app. Your email address is never displayed publicly and is used only for account verification and communication from us.</p>
+    <p>To create an account, we collect your email address, first name, and zip code. Your first name and zip code are shown publicly in the app. Your email address is never shown publicly. We use it only to verify your account and to contact you about the app.</p>
+    <p>If you add a profile photo, other users can see it. The app also stores the posts, messages, and reports you create so it can work.</p>
+    <p>If you contact us through the app's support form, we keep your name, email, and message so we can reply.</p>
+    <p>If you join our waitlist, we collect the details you enter on the signup form, such as your email address and zip code, so we can tell you when the app reaches your area.</p>
     <p>We do not collect your last name, phone number, home address, payment information, or any government-issued identification.</p>
+
     <h3>How we use your information</h3>
-    <p>We use your information to operate the app, verify your account, show you posts near your location, and communicate with you about your account or the app. We do not use your information for advertising, profiling, or any commercial purpose.</p>
+    <p>We use your information to run the app, verify your account, show you posts near you, and contact you about your account or the app. We do not use your information for advertising, profiling, or any commercial purpose.</p>
+
+    <h3>Who helps us run the app</h3>
+    <p>A small number of service providers run parts of the app for us. They handle your information only to provide their service to us, and never for their own purposes:</p>
+    <p>Supabase (database and sign-in), Vercel (website and app hosting), and EmailOctopus (waitlist emails, only if you join the waitlist).</p>
+
     <h3>What we never do</h3>
-    <p>We will never sell, rent, or share your personal information with third parties for commercial purposes. We will never run ads in the app or on this website. We will never use your data to build advertising profiles.</p>
+    <p>We will never sell, rent, or share your personal information with third parties for commercial purposes, and we will never use your data to build advertising profiles.</p>
+    <p>If we ever feature mission-aligned sponsors, it will be simple banners we place ourselves. Sponsors will never receive your information, and we won't use ad networks or tracking.</p>
+
     <h3>Messages</h3>
-    <p>Messages sent between users are private. However, messages may be reviewed by our team in response to a safety report or violation of our terms. This is disclosed to all users at signup.</p>
-    <h3>Data retention</h3>
-    <p>You may delete your account at any time from within the app. Upon deletion, your posts and messages are removed from the public feed. If you have questions about data removal, contact us at <a href="mailto:megan@alittlehelpapp.org">megan@alittlehelpapp.org</a>.</p>
+    <p>Messages between users are private. Our team may review messages in response to a safety report or a violation of our terms. Everyone is told this at signup.</p>
+
+    <h3>Deleting your data</h3>
+    <p>You can delete your account at any time from the Profile tab in the app. Deleting your account permanently erases your profile, photo, posts, messages, and notifications. This can't be undone.</p>
+    <p>You can leave the waitlist at any time using the unsubscribe link in any of our emails. To have your waitlist information deleted entirely, or for any other data question, email us at <a href="mailto:megan@alittlehelpapp.org">megan@alittlehelpapp.org</a>.</p>
+
+    <h3>If A Little Help?! ever closes</h3>
+    <p>If our organization dissolves, merges, or stops running the app, we will delete your information. We will not transfer it to any other organization or company.</p>
+
     <h3>Children</h3>
-    <p>A Little Help?! is intended for users 18 years of age and older. We do not knowingly collect information from anyone under 18. If you believe a minor has created an account, please contact us immediately.</p>
+    <p>A Little Help?! is for adults 18 and older. We do not knowingly collect information from anyone under 18. If you believe a minor has created an account, please contact us right away.</p>
+
     <h3>Contact</h3>
     <p>Questions about privacy? Email us at <a href="mailto:megan@alittlehelpapp.org">megan@alittlehelpapp.org</a>.</p>
   </div>
 </section>
 
-<!-- TERMS OF SERVICE -->
-<section class="legal-section alt">
-  <div class="container">
-    <h2>Terms of Service</h2>
-    <span class="updated">Last updated: May 2026</span>
+<section id="terms">
+  <div class="wrap narrow">
+    <h2>Terms of service</h2>
+    <p class="muted small">Last updated: May 2026</p>
     <h3>Acceptance</h3>
     <p>By creating an account or using A Little Help?!, you agree to these terms. If you do not agree, please do not use the app.</p>
     <h3>Eligibility</h3>
@@ -139,52 +173,60 @@
     <h3>Your responsibilities</h3>
     <p>You agree to use A Little Help?! for lawful purposes only and in a way that does not harm others. You are responsible for all activity on your account. You agree not to post content that is illegal, threatening, harassing, abusive, or discriminatory.</p>
     <h3>Safety</h3>
-    <p>A Little Help?! is a platform for connecting neighbors — it is not a professional service and is not a substitute for emergency services. If you are in danger, call 911. When meeting someone in person, always use good judgment, meet in public places, and trust your instincts.</p>
+    <p>A Little Help?! is a platform for connecting neighbors. It is not a professional service and is not a substitute for emergency services. If you are in danger, call 911. When meeting someone in person, always use good judgment, meet in public places, and trust your instincts.</p>
     <h3>No guarantees</h3>
     <p>We do not guarantee that help will be available, that users will follow through on commitments, or that any particular outcome will result from using the app. All interactions are voluntary and between users.</p>
     <h3>Termination</h3>
     <p>We reserve the right to suspend or terminate accounts that violate these terms or that we believe pose a safety risk to the community.</p>
     <h3>Changes</h3>
-    <p>We may update these terms from time to time. We will notify users of significant changes via email or in-app notice.</p>
+    <p>We may update these terms from time to time. We will notify users of significant changes by email or in-app notice.</p>
     <h3>Governing law</h3>
     <p>These terms are governed by the laws of the State of Texas.</p>
   </div>
 </section>
 
-<!-- DISCLAIMER -->
-<section class="legal-section">
-  <div class="container">
+<section class="white" id="disclaimer">
+  <div class="wrap narrow">
     <h2>Disclaimer</h2>
-    <span class="updated">Last updated: May 2026</span>
+    <p class="muted small">Last updated: May 2026</p>
     <h3>Not a professional service</h3>
-    <p>A Little Help?! connects neighbors for informal mutual aid. Users of the app are not licensed professionals. Nothing shared through A Little Help?! constitutes medical, legal, financial, or professional advice of any kind.</p>
+    <p>A Little Help?! connects neighbors for informal mutual aid. Users of the app are not licensed professionals. Nothing shared through A Little Help?! is medical, legal, financial, or professional advice of any kind.</p>
     <h3>Not an emergency service</h3>
-    <p>A Little Help?! is not an emergency service. In any emergency, please call 911 or your local emergency number immediately.</p>
+    <p>A Little Help?! is not an emergency service. In any emergency, call 911 or your local emergency number immediately.</p>
     <h3>Limitation of liability</h3>
     <p>A Little Help?! Inc. is not responsible for the actions, conduct, or content of its users. We are not liable for any harm, loss, or damage arising from interactions between users or from use of the app.</p>
     <h3>Nonprofit status</h3>
-    <p>A Little Help?! Inc. is a registered 501(c)(3) nonprofit organization. Donations are tax-deductible as allowed by law. EIN: 35-2983400.</p>
+    <p>A Little Help?! Inc. is a registered 501(c)(3) nonprofit organization. Donations are tax-deductible as allowed by law. EIN 35&#8209;2983400.</p>
     <h3>Questions</h3>
-    <p>For any legal questions or concerns, contact us at <a href="mailto:megan@alittlehelpapp.org">megan@alittlehelpapp.org</a> or write to us at 802 Red Oak Lane, Arlington, TX 76013.</p>
+    <p>For any legal questions or concerns, email us at <a href="mailto:megan@alittlehelpapp.org">megan@alittlehelpapp.org</a> or write to us at 802 Red Oak Lane, Arlington, TX 76013.</p>
   </div>
 </section>
 
+</main>
+
 <footer>
-  <div class="footer-logo">
-    <img src="transparentlogo.png" alt="Logo">
-    <span>A Little Help?!</span>
+  <div class="wrap">
+    <div>
+      <div class="foot-name"><img src="transparentlogo.png" alt="" width="40" height="40">A Little Help?!</div>
+      <p>A Little Help?! Inc. is a 501(c)(3) nonprofit organization. EIN 35&#8209;2983400.</p>
+      <p>802 Red Oak Lane, Arlington, TX 76013</p>
+      <p>Donations are tax-deductible as allowed by law.</p>
+    </div>
+    <ul class="foot-links">
+      <li><a href="mailto:megan@alittlehelpapp.org">megan@alittlehelpapp.org</a></li>
+      <li><a href="https://instagram.com/alittlehelpapp">Instagram</a> and <a href="https://tiktok.com/@alittlehelpapp">TikTok</a>: @alittlehelpapp</li>
+      <li><a href="privacy.html#privacy">Privacy</a>, <a href="privacy.html#terms">Terms</a>, and <a href="privacy.html#disclaimer">Disclaimer</a></li>
+    </ul>
+    <p class="foot-promise">Free forever. No targeted ads. No data selling. Built with love in Arlington, TX. 🌱</p>
   </div>
-  <p>A 501(c)(3) nonprofit organization · EIN: 35-2983400</p>
-  <p>802 Red Oak Lane, Arlington, TX 76013</p>
-  <p style="margin-top: 12px;">
-    <a href="mailto:megan@alittlehelpapp.org">megan@alittlehelpapp.org</a> ·
-    <a href="https://instagram.com/alittlehelpapp">Instagram</a> · <a href="https://tiktok.com/@alittlehelpapp">TikTok</a> · @alittlehelpapp
-  </p>
-  <p style="margin-top: 16px; color: rgba(255,255,255,0.25); font-size: 0.75rem;">Free forever. No ads. No data selling. Built with love in Arlington, TX. 🌱</p>
 </footer>
 
 <script>
-function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+  var btn = document.getElementById('menuBtn'), links = document.getElementById('navLinks');
+  btn.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
 </script>
 </body>
 </html>
