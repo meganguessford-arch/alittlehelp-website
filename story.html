@@ -3,357 +3,266 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Story — A Little Help?!</title>
-<meta name="description" content="The origin story of A Little Help?! — a dream, a live oak tree, and a mother's vision to restore faith in humanity.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<title>Our story | A Little Help?!</title>
+<meta name="description" content="How A Little Help?! began: a lost friendship, a trip to Colombia, a dream, and a live oak. The story behind a free, privacy-first neighbor help app.">
+<link rel="icon" href="logo192.png">
+<link rel="stylesheet" href="nunito.css">
 <style>
   :root {
-    --blue: #2B8FD4; --dark-blue: #1A6FAD; --light-blue: #E8F4FD;
-    --pink: #e91e8c; --off-white: #F8F7F4; --warm-gray: #EAE8E3;
-    --dark-text: #1C2B3A; --muted: #6B7F8E; --white: #ffffff;
+    --paper: #F8F7F4; --white: #ffffff; --ink: #1C2B3A; --muted: #4F6273;
+    --blue: #1A7DB4; --blue-dark: #145F8A; --tint: #EDF5FA;
+    --pink: #D81B80; --pink-dark: #B5146A; --line: #E4E1DA;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Nunito', sans-serif; background: var(--off-white); color: var(--dark-text); overflow-x: hidden; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; font-size: 1.0625rem; overflow-x: hidden; }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: var(--blue-dark); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
 
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--warm-gray); padding: 0 24px;
-    height: 64px; display: flex; align-items: center; justify-content: space-between;
-  }
+  nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--line); }
+  .nav-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; height: 68px; display: flex; align-items: center; justify-content: space-between; }
   .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .nav-logo img { height: 40px; width: 40px; object-fit: contain; }
-  .nav-logo span { font-weight: 900; font-size: 1.1rem; color: var(--blue); }
-  .nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
-  .nav-links a { text-decoration: none; font-weight: 700; font-size: 0.875rem; color: var(--dark-text); padding: 8px 14px; border-radius: 99px; transition: all 0.2s; }
-  .nav-links a:hover { background: var(--light-blue); color: var(--blue); }
-  .nav-links .btn-nav { background: var(--pink); color: white; padding: 8px 20px; }
-  .nav-links .btn-nav:hover { background: #c91578; color: white; }
-  .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
-  .hamburger span { display: block; width: 24px; height: 2px; background: var(--dark-text); border-radius: 2px; }
-  @media (max-width: 768px) {
-    .hamburger { display: flex; }
-    .nav-links { display: none; position: fixed; top: 64px; left: 0; right: 0; background: white; flex-direction: column; padding: 16px; border-bottom: 1px solid var(--warm-gray); gap: 4px; }
+  .nav-logo img { height: 44px; width: 44px; object-fit: contain; }
+  .nav-logo span { font-weight: 900; font-size: 1.15rem; color: var(--ink); }
+  .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
+  .nav-links a { text-decoration: none; font-weight: 700; font-size: 0.95rem; color: var(--ink); padding: 8px 14px; border-radius: 8px; }
+  .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--blue-dark); background: var(--tint); }
+  .nav-links .nav-donate { background: var(--pink); color: var(--white); margin-left: 8px; }
+  .nav-links .nav-donate:hover { background: var(--pink-dark); color: var(--white); }
+  .menu-btn { display: none; background: none; border: 1px solid var(--line); border-radius: 8px; cursor: pointer; padding: 8px 12px; font: inherit; font-weight: 800; color: var(--ink); }
+  @media (max-width: 800px) {
+    .menu-btn { display: block; }
+    .nav-links { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--white); flex-direction: column; align-items: stretch; padding: 12px 24px 20px; border-bottom: 1px solid var(--line); }
     .nav-links.open { display: flex; }
-    .nav-links a { width: 100%; text-align: center; }
+    .nav-links .nav-donate { margin: 8px 0 0; text-align: center; }
   }
 
-  .story-hero {
-    min-height: 60vh; position: relative;
-    display: flex; align-items: center; padding-top: 64px; overflow: hidden;
-    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--dark-text) 100%);
-  }
-  .story-hero-bg { display: none; }
-  .story-hero-overlay { display: none; }
-  .story-hero-content {
-    position: relative; z-index: 2; padding: 48px 40px;
-    max-width: 500px; animation: fadeup 1s ease both; flex: 1;
-  }
-  .story-hero-image {
-    flex: 1; padding: 40px 40px 40px 0;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .story-hero-image img {
-    width: 100%; max-width: 420px; height: 420px;
-    object-fit: cover; object-position: center top;
-    border-radius: 24px;
-    border: 3px solid rgba(255,255,255,0.3);
-    box-shadow: 0 8px 40px rgba(0,0,0,0.3);
-  }
-  @media (max-width: 768px) {
-    .story-hero { flex-direction: column; padding-bottom: 40px; }
-    .story-hero-image { padding: 0 24px 40px; }
-    .story-hero-image img { max-width: 100%; height: 260px; }
-    .story-hero-content { padding: 48px 24px 24px; max-width: 100%; }
-  }
-  @keyframes fadeup {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .story-hero-content .label {
-    font-size: 0.75rem; font-weight: 800; letter-spacing: 0.15em;
-    text-transform: uppercase; color: var(--pink); margin-bottom: 12px;
-  }
-  .story-hero-content h1 {
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    font-weight: 900; color: white; line-height: 1.15; margin-bottom: 16px;
-  }
-  .story-hero-content h1 span { color: var(--pink); }
-  .story-hero-content p {
-    font-size: 1.05rem; color: rgba(255,255,255,0.75);
-    font-weight: 600; max-width: 560px; line-height: 1.7;
-  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .narrow { max-width: 720px; }
+  section { padding: 72px 0; }
+  section[id] { scroll-margin-top: 80px; }
+  section.tint { background: var(--tint); }
+  section.white { background: var(--white); }
+  .page-top { padding: 72px 0 40px; }
+  h1 { font-size: clamp(2.2rem, 5.5vw, 3.4rem); font-weight: 900; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 18px; max-width: 18ch; }
+  h2 { font-size: clamp(1.6rem, 3.6vw, 2.2rem); font-weight: 900; line-height: 1.2; margin-bottom: 18px; max-width: 24ch; }
+  h3 { font-size: 1.15rem; font-weight: 800; line-height: 1.35; margin: 28px 0 8px; }
+  p { margin-bottom: 16px; max-width: 68ch; }
+  .lede { font-size: 1.2rem; color: var(--muted); font-weight: 600; max-width: 56ch; }
+  .muted { color: var(--muted); }
+  .small { font-size: 0.9rem; }
 
-  .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
-  .story-section { padding: 72px 24px; }
-  .story-section.alt { background: white; }
+  .btn { display: inline-block; text-decoration: none; font-weight: 800; padding: 13px 26px; border-radius: 10px; background: var(--pink); color: var(--white); border: 2px solid var(--pink); }
+  .btn:hover { background: var(--pink-dark); border-color: var(--pink-dark); color: var(--white); }
+  .btn-quiet { background: transparent; color: var(--ink); border-color: var(--ink); }
+  .btn-quiet:hover { background: var(--ink); border-color: var(--ink); color: var(--white); }
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+  .text-link { font-weight: 800; color: var(--blue-dark); }
 
-  .chapter { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-  @media (max-width: 768px) {
-    .chapter { grid-template-columns: 1fr; }
-    .chapter .chapter-image { order: -1; }
-  }
-  .chapter.reverse .chapter-image { order: 2; }
-  .chapter.reverse .chapter-text { order: 1; }
-  @media (max-width: 768px) { .chapter.reverse .chapter-image { order: -1; } }
+  .rows { border-top: 1px solid var(--line); margin: 24px 0 8px; max-width: 760px; }
+  .row { display: flex; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .row .e { font-size: 1.5rem; line-height: 1.3; flex: 0 0 auto; width: 2rem; text-align: center; }
+  .row p { margin: 0; }
+  .row b { font-weight: 800; }
 
-  .chapter-image {
-    border-radius: 24px; overflow: hidden;
-    border: 2px solid var(--warm-gray);
-    box-shadow: 0 8px 40px rgba(0,0,0,0.1);
-  }
-  .chapter-image img { width: 100%; display: block; max-height: 420px; object-fit: cover; object-position: center top; }
-  .chapter-image .caption {
-    padding: 10px 16px; font-size: 0.8rem; font-weight: 700;
-    color: var(--muted); background: white; text-align: center; font-style: italic;
-  }
+  .media { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 48px; align-items: start; }
+  .media.logo-left { grid-template-columns: 220px minmax(0, 1fr); }
+  @media (max-width: 760px) { .media, .media.logo-left { grid-template-columns: 1fr; gap: 24px; } .media.logo-left img { width: 160px; } }
+  figure { margin: 24px 0; }
+  figure img { border-radius: 8px; width: 100%; }
+  figcaption { font-size: 0.95rem; color: var(--muted); margin-top: 10px; }
 
-  .label { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); margin-bottom: 12px; }
-  h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; color: var(--dark-text); line-height: 1.2; margin-bottom: 20px; }
-  h2 span { color: var(--blue); }
-  p { font-size: 1rem; font-weight: 600; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
+  .callout { border-left: 4px solid var(--blue); padding: 4px 0 4px 20px; margin: 24px 0; max-width: 64ch; }
+  .callout p { margin: 0; font-weight: 700; }
 
-  blockquote {
-    font-size: 1.15rem; font-weight: 700; font-style: italic; color: var(--blue);
-    border-left: 4px solid var(--pink); padding: 12px 20px; margin: 24px 0;
-    line-height: 1.6; background: var(--light-blue); border-radius: 0 12px 12px 0;
-  }
+  footer { background: var(--ink); color: #C9D3DC; padding: 48px 0; font-size: 0.95rem; }
+  footer .wrap { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px 48px; align-items: start; }
+  footer a { color: var(--white); }
+  footer p { margin-bottom: 8px; max-width: none; }
+  .foot-name { display: flex; align-items: center; gap: 10px; font-weight: 900; color: var(--white); font-size: 1.1rem; margin-bottom: 12px; }
+  .foot-name img { width: 40px; height: 40px; object-fit: contain; background: var(--white); border-radius: 50%; padding: 3px; }
+  .foot-links { list-style: none; }
+  .foot-links li { margin-bottom: 6px; }
+  .foot-promise { grid-column: 1 / -1; border-top: 1px solid #33475A; padding-top: 16px; color: #9FB0BF; }
+  @media (max-width: 640px) { footer .wrap { grid-template-columns: 1fr; } }
 
-  .highlight-box {
-    background: var(--dark-text); border-radius: 20px;
-    padding: 36px 40px; margin: 48px 0; text-align: center;
-  }
-  .highlight-box p { color: rgba(255,255,255,0.75); font-size: 1.1rem; margin-bottom: 0; }
-  .highlight-box strong { color: white; display: block; font-size: 1.3rem; font-weight: 900; margin-bottom: 8px; }
-
-  .tree-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0; }
-  @media (max-width: 640px) { .tree-facts { grid-template-columns: 1fr; } }
-  .tree-fact { background: var(--light-blue); border-radius: 16px; padding: 24px; text-align: center; }
-  .tree-fact .icon { font-size: 2rem; display: block; margin-bottom: 8px; }
-  .tree-fact h4 { font-size: 0.95rem; font-weight: 800; color: var(--dark-text); margin-bottom: 6px; }
-  .tree-fact p { font-size: 0.82rem; color: var(--muted); margin: 0; line-height: 1.5; }
-
-  .colombia-section { padding: 72px 24px; background: #1a3a2e; }
-  .colombia-section .label { color: var(--pink); }
-  .colombia-section h2 { color: white; }
-  .colombia-section p { color: rgba(255,255,255,0.85); }
-  .colombia-section blockquote { background: rgba(255,255,255,0.08); border-left-color: var(--pink); color: rgba(255,255,255,0.95); }
-
-  .colombia-images { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin: 32px 0; }
-  @media (max-width: 640px) { .colombia-images { grid-template-columns: 1fr; } }
-  .colombia-images img { width: 100%; border-radius: 20px; object-fit: cover; display: block; height: 340px; filter: brightness(1.15); }
-
-  .gratitude-box {
-    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 24px; padding: 32px;
-    display: grid; grid-template-columns: 180px 1fr;
-    gap: 28px; align-items: center; margin-top: 40px;
-  }
-  @media (max-width: 640px) { .gratitude-box { grid-template-columns: 1fr; text-align: center; } }
-  .gratitude-box img {
-    width: 180px; height: 220px; object-fit: cover; object-position: center top;
-    border-radius: 16px; border: 2px solid rgba(255,255,255,0.3);
-    filter: brightness(1.1);
-  }
-  @media (max-width: 640px) { .gratitude-box img { width: 100%; height: 240px; } }
-  .gratitude-text h4 { font-size: 1rem; font-weight: 900; color: white; margin-bottom: 8px; }
-  .gratitude-text p { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 16px; line-height: 1.7; }
-  .gratitude-links { display: flex; flex-wrap: wrap; gap: 10px; }
-  .gratitude-link {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
-    color: white; font-size: 0.82rem; font-weight: 800;
-    padding: 8px 16px; border-radius: 99px; text-decoration: none;
-  }
-  .gratitude-link:hover { background: rgba(255,255,255,0.2); }
-
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 99px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1rem; text-decoration: none; cursor: pointer; border: none; transition: all 0.2s; }
-  .btn-primary { background: linear-gradient(135deg, var(--blue), var(--dark-blue)); color: white; box-shadow: 0 4px 20px rgba(43,143,212,0.4); }
-  .btn-primary:hover { transform: translateY(-2px); }
-  .btn-pink { background: var(--pink); color: white; }
-  .btn-pink:hover { background: #c91578; transform: translateY(-2px); }
-
-  .founder-section { background: linear-gradient(135deg, var(--dark-blue), var(--dark-text)); padding: 72px 24px; text-align: center; }
-  .founder-photo { width: 140px; height: 140px; border-radius: 20px; object-fit: cover; object-position: center top; border: 3px solid var(--blue); margin: 0 auto 24px; display: block; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
-  .founder-section h2 { color: white; margin-bottom: 6px; }
-  .founder-section .role { color: var(--pink); font-weight: 800; font-size: 0.9rem; margin-bottom: 20px; }
-  .founder-section p { color: rgba(255,255,255,0.7); max-width: 560px; margin: 0 auto 16px; }
-  .creds { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 20px 0 28px; }
-  .cred { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; font-size: 0.8rem; font-weight: 700; padding: 6px 16px; border-radius: 99px; }
-
-  footer { background: var(--dark-text); color: rgba(255,255,255,0.5); padding: 40px 24px; text-align: center; font-size: 0.8rem; font-weight: 600; line-height: 1.8; }
-  footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
-  footer a:hover { color: var(--blue); }
-  .footer-logo { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 20px; }
-  .footer-logo img { height: 36px; filter: opacity(0.7); }
-  .footer-logo span { font-size: 1rem; font-weight: 800; color: rgba(255,255,255,0.6); }
+  .story-top .wrap { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 48px; align-items: center; }
+  .story-top img { border-radius: 8px; }
+  @media (max-width: 760px) { .story-top .wrap { grid-template-columns: 1fr; gap: 28px; } }
+  .chapter { max-width: 720px; }
+  .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 28px 0; }
+  .pair img { border-radius: 8px; aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
+  @media (max-width: 560px) { .pair { grid-template-columns: 1fr; } }
+  .links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+  .quote { font-size: clamp(1.2rem, 2.4vw, 1.45rem); font-weight: 800; line-height: 1.5; border-left: 4px solid var(--pink); padding-left: 20px; margin: 24px 0; max-width: 46ch; }
+  .tree-logo { width: 220px; }
+  .portrait img { max-width: 440px; }
+  .wide-photo { max-width: 760px; }
+  .story-top img { max-width: 360px; justify-self: center; }
+  .founder { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 32px; align-items: center; max-width: 760px; }
+  .founder img { border-radius: 50%; aspect-ratio: 1; object-fit: cover; object-position: 50% 0%; width: 200px; }
+  .founder h2 { margin-bottom: 6px; }
+  .founder ul { list-style: none; margin-top: 8px; }
+  .founder li { padding: 4px 0; font-weight: 700; color: var(--muted); }
+  @media (max-width: 640px) { .founder { grid-template-columns: 1fr; } .founder img { width: 160px; } }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="index.html" class="nav-logo">
-    <img src="transparentlogo.png" alt="A Little Help?! Logo">
-    <span>A Little Help?!</span>
-  </a>
-  <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="how-it-works.html">How It Works</a></li>
-    <li><a href="story.html">Our Story</a></li>
-    <li><a href="support.html">Support Us</a></li>
-    <li><a href="https://donorbox.org/launch-fund-for-a-little-help" class="btn-nav">Donate 💙</a></li>
-  </ul>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="transparentlogo.png" alt="" width="44" height="44">
+      <span>A Little Help?!</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="how-it-works.html">How it works</a></li>
+      <li><a href="story.html" aria-current="page">Our story</a></li>
+      <li><a href="support.html">Support us</a></li>
+      <li><a href="https://donorbox.org/launch-fund-for-a-little-help" class="nav-donate">Donate 💙</a></li>
+    </ul>
+  </div>
 </nav>
 
-<section class="story-hero">
-  <div class="story-hero-bg"></div>
-  <div class="story-hero-overlay"></div>
-  <div class="story-hero-content">
-    <p class="label">Our Story</p>
-    <h1>Born from a <span>dream.</span><br>Built with love.</h1>
-    <p>A Little Help?! didn't start with a business plan. It started with a vision, a broken-open heart, and a refusal to let a dream stay a dream.</p>
-  </div>
-  <div class="story-hero-image">
-    <img src="malokaview.jpeg" alt="View from inside the maloka at Shanayoy, Sibundoy Valley, Colombia">
+<main>
+
+<section class="page-top story-top">
+  <div class="wrap">
+    <div>
+      <h1>Our story</h1>
+      <p class="lede">A Little Help?! started with a lost friendship, a trip to Colombia, and a dream I would never forget.</p>
+    </div>
+    <img src="founderimage.jpeg" alt="Megan Guessford, founder of A Little Help?!" width="480" height="480">
   </div>
 </section>
 
-<!-- CHAPTER 1: THE MOMENT -->
-<section class="story-section">
-  <div class="container">
-    <div class="chapter">
-      <div class="chapter-text">
-        <p class="label">Where It Began</p>
-        <h2>The world was <span>fracturing.</span><br>I went inward.</h2>
-        <p>It was one of the hardest stretches of my life. My partner was in a mental health crisis. The world felt like it was tearing apart at every seam. I had just marked 10 years sober — a decade of rebuilding myself from the inside out — and I felt the weight of a broken world in a way I couldn't ignore.</p>
-        <p>I didn't know what to do with that feeling. So I did what I'd learned to do in recovery: I got quiet. I went inward. I went to Colombia for a healing plant medicine retreat with indigenous teachers. I came home with more questions than answers — and then, on my second night of real sleep, I had a dream unlike anything I'd ever experienced.</p>
-        <blockquote>"It was more like a long break from this dimension. So real, so vividly instructional. Every step was laid out — from 'acquire the domain' to 'legalize the nonprofit through the state, then federally.' My 11-year-old son was walking me through the jungle, the one I had recently left, teaching me how to build a nonprofit, a website, and an app. When I woke up, I remembered every word, every step — and to be honest, I was a little terrified."</blockquote>
-      </div>
-      <div class="chapter-image">
-        <img src="founderimage.jpeg" alt="Megan Guessford">
-        <div class="caption">Under the live oak — the tree that was always trying to tell me something.</div>
-      </div>
-    </div>
+<section class="white">
+  <div class="wrap chapter">
+    <h2>Twenty years, gone over a belief.</h2>
+    <p>A few years ago, I lost a 20-year friendship over politics. I eventually let go of my own political identity, but that didn't bring the friendship back. Twenty years of really knowing each other weren't enough to outweigh a belief.</p>
+    <p>That was a turning point for me. If people who truly know each other can be split that easily, something in American life is badly broken. I have three kids, and I didn't want to hand this world down to them.</p>
+    <p>It was a hard season in other ways too. My partner was in a mental health crisis, and I had just marked 10 years in recovery. Recovery taught me what to do when everything feels too big: get quiet and look inward. So I did.</p>
   </div>
 </section>
 
-<!-- COLOMBIA -->
-<section class="colombia-section">
-  <div class="container">
-    <p class="label">Before the Dream</p>
-    <h2>Where the <span style="color: var(--pink);">healing happened</span></h2>
-    <p>Before the dream, there was Colombia. I traveled to the Sibundoy Valley in Putumayo — the Sacred Valley of the Kamëntsá people — and spent time at Shanayoy Healing Center with Taita Juan Bautista Agreda, Erika Salazar, and their families. Erika has worked alongside Taita Juan for over 20 years and lives on the land with her husband and children, rooted in the medicine and the earth. It was there, in the maloka, surrounded by medicinal plants and mist-covered mountains, that something in me opened. I came home changed. And two nights later, I had the dream that built all of this.</p>
-    <p>I owe a debt of gratitude I can never fully repay. But I can point people toward them.</p>
-    <div class="colombia-images">
-      <img src="colombiafog.jpeg" alt="Misty morning in Sibundoy Valley, Colombia">
-      <img src="trumpetflower.jpeg" alt="Angel's Trumpet — sacred plant used in dream work by the Kamëntsá people">
+<section>
+  <div class="wrap chapter">
+    <h2>Take the seeds home.</h2>
+    <p>I went to the Sibundoy Valley in Putumayo, the sacred valley of the Kamëntsá people. I spent time at Shanayoy Healing Center with Taita Juan Bautista Agreda, Erika Salazar, and their families. Erika has worked alongside Taita Juan for over 20 years and lives on the land with her husband and children.</p>
+    <div class="pair">
+      <img src="colombiafog.jpeg" alt="Misty morning in the Sibundoy Valley, Colombia" loading="lazy">
+      <img src="malokaview.jpeg" alt="View from inside the maloka at Shanayoy Healing Center" loading="lazy">
     </div>
-    <div class="gratitude-box">
-      <img src="rosieandme.jpg" alt="Megan and Rosie in Colombia">
-      <div class="gratitude-text">
-        <h4>With deep gratitude 💙</h4>
-        <p>That's me with Rosie — Erika's daughter. We had an immediate connection, both of us with dirt on our hands and a little plant between us. It's one of the clearest pictures I have of what A Little Help?! is actually about.</p>
-        <p style="font-size:0.85rem; margin-bottom:16px;">The Kamëntsá people of the Sibundoy Valley have stewarded sacred plants, healing traditions, and ancestral knowledge for generations. Their wisdom deserves to be honored and supported.</p>
-        <div class="gratitude-links">
-          <a href="https://www.shanayoy.org" target="_blank" class="gratitude-link">🌿 Shanayoy Healing Center</a>
-          <a href="https://www.oioc.co" target="_blank" class="gratitude-link">🌱 OIOC — Support the Kamëntsá</a>
-        </div>
-      </div>
+    <p>On the last ceremonial night, Taita told us to take the seeds we'd been given, and everything we'd learned, and plant them in our own communities back home. I've thought about that almost every day since.</p>
+    <figure class="portrait">
+      <img src="rosieandme.jpg" alt="Megan and Rosie in Colombia, holding a small plant" loading="lazy">
+      <figcaption>Me with Rosie, Erika's daughter. We hit it off right away, both of us with dirt on our hands and a little plant between us.</figcaption>
+    </figure>
+    <p>I owe them more than I can repay, but I can point people their way.</p>
+    <div class="links">
+      <a class="btn btn-quiet" href="https://www.shanayoy.org">Shanayoy Healing Center</a>
+      <a class="btn btn-quiet" href="https://www.oioc.co">OIOC: Support the Kamëntsá</a>
     </div>
   </div>
 </section>
 
-<!-- THE TREE -->
-<section class="story-section alt">
-  <div class="container">
-    <div class="chapter reverse">
-      <div class="chapter-image">
-        <img src="boysintree.jpeg" alt="My sons in the branches — the tree that called to me before I knew what it was.">
-        <div class="caption">My sons in the branches — the tree that called to me before I knew what it was.</div>
+<section class="white">
+  <div class="wrap chapter">
+    <h2>Step-by-step instructions, delivered overnight.</h2>
+    <p>Two nights after I got home, I had a dream that felt less like a dream and more like a training manual. My son was walking me through the jungle I had just left, explaining how to build a nonprofit, a website, and an app. It started with buying the domain and went all the way to registering with the state and the IRS. I woke up remembering every step. Honestly, it scared me a little.</p>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="wrap">
+    <div class="media logo-left">
+      <img class="tree-logo" src="transparentlogo.png" alt="A Little Help?! live oak logo" width="220" height="220" loading="lazy">
+      <div>
+        <h2>It started with a sketch.</h2>
+        <p>More than a year before Colombia, I kept picturing a big oak tree. My son and I were sitting in the branches, and small groups of people were gathered in the shade below. I didn't know what it meant, so I held onto it.</p>
+        <p>The logo came before the website, the app, or anything else. I sketched that tree by hand (honestly, closer to a stick figure) and used an AI image tool to turn my drawing into the finished logo. Later, a tree near my house kept stopping me on walks. When I looked it up, it was a live oak. It felt like the tree had been trying to tell me something all along.</p>
       </div>
-      <div class="chapter-text">
-        <p class="label">The Symbol</p>
-        <h2>The tree was always <span>trying to tell me something.</span></h2>
-        <p>Over a year before Colombia, I had visions of an oak tree — wide, full, sheltering. My 11-year-old and I were sitting in the branches. Little groups of people gathered in the shade below. I didn't know what it meant yet. I just held it.</p>
-        <p>After building the nonprofit, I found a tree near my house that kept calling to me. I'd walk past it, stop, feel something. I found out later it was a live oak — a tree that never loses its leaves, that grows a wide umbrella canopy, that provides shade year-round. Always present. Always sheltering.</p>
-        <p>That was the logo. I'd designed it before I knew what it was.</p>
-        <div class="tree-facts">
-          <div class="tree-fact">
-            <span class="icon">🌿</span>
-            <h4>Always in leaf</h4>
-            <p>Live oaks keep their leaves year-round. The community is always there.</p>
-          </div>
-          <div class="tree-fact">
-            <span class="icon">☂️</span>
-            <h4>Wide shade</h4>
-            <p>The broad canopy shelters everyone underneath — no exceptions.</p>
-          </div>
-          <div class="tree-fact">
-            <span class="icon">🌰</span>
-            <h4>The acorn</h4>
-            <p>Small acts that grow into something much larger than themselves.</p>
-          </div>
-        </div>
+    </div>
+    <div class="rows">
+      <div class="row"><span class="e" aria-hidden="true">🌿</span><p><b>Always in leaf.</b> Live oaks keep their leaves all year, so there's never a season without shade.</p></div>
+      <div class="row"><span class="e" aria-hidden="true">☂️</span><p><b>Wide shade.</b> The canopy covers everyone underneath, no exceptions.</p></div>
+      <div class="row"><span class="e" aria-hidden="true">🌰</span><p><b>The acorn.</b> Every big oak starts as one small acorn, and kindness works the same way.</p></div>
+    </div>
+    <figure class="wide-photo">
+      <img src="boysintree.jpeg" alt="Megan's sons sitting in the branches of the live oak" loading="lazy">
+      <figcaption>My boys up in the tree that kept calling me.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="white">
+  <div class="wrap chapter">
+    <h2>No tech background. A lot of trial and error.</h2>
+    <p>I had never done anything technical in my life. My first website was one I built by hand on Dorik, and that alone was a steep learning curve. A Little Help?! took a lot of late nights, independent study, and the help of emerging AI tools, which were pretty basic at the time. Most of it I did the long way.</p>
+    <p>A Little Help?! became a 501(c)(3) in June 2025, and the app is getting ready for its first beta neighbors in DFW.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap chapter">
+    <h2>Small acts, rebuilding what's been pulled apart.</h2>
+    <p>The friendship I lost taught me how easily people get sorted into sides. This app is my answer to that. When someone shows up to help you and they don't fit the picture you were given of "the other side," something shifts. One small act at a time, we can rebuild what's been pulled apart.</p>
+  </div>
+</section>
+
+<section class="white">
+  <div class="wrap">
+    <div class="founder">
+      <img src="founderimage2.jpeg" alt="Megan Guessford" width="200" height="200">
+      <div>
+        <h2>Megan Guessford</h2>
+        <ul>
+          <li>Founder and Executive Director</li>
+          <li>Mother of three</li>
+          <li>11 years in recovery</li>
+          <li>Arlington, TX</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- THE BUILD -->
-<section class="story-section">
-  <div class="container">
-    <div style="max-width: 680px; margin: 0 auto; text-align: center;">
-      <p class="label">The Build</p>
-      <h2>No tech background.<br>No funding. <span>No roadmap.</span></h2>
-      <p style="text-align: left;">I had never written a line of code. I had no technical background, no team, no outside funding, and no blueprint. What I had was the dream, a deep belief in people, and a willingness to figure it out one step at a time.</p>
-      <p style="text-align: left;">Using emerging AI tools and sheer determination, I built A Little Help?! from scratch — the app, the nonprofit, the legal structure, the brand, all of it — within months. Not because it was easy. Because it was necessary.</p>
-      <blockquote style="text-align: left;">"It's more than an app. It's a movement, a calling. A movement calling us home to each other."</blockquote>
-      <p style="text-align: left;">The 501(c)(3) was approved in June 2025. The app is live. The mission is clear. And the tree is still standing in that park in Arlington, wide and sheltering, leaves still on — just like it always was.</p>
-    </div>
-    <div class="highlight-box">
-      <strong>Expanding Consciousness Through Compassionate Action.</strong>
-      <p>When the person helping you looks like the person you've been taught to fear — consciousness expands. One micro-act of kindness at a time, we are rebuilding the social fabric of America.</p>
-    </div>
+<section class="tint">
+  <div class="wrap narrow">
+    <h2>Want to plant a few seeds with us?</h2>
+    <p class="lede">Join the waitlist to be one of our first DFW neighbors, or chip in to keep the app free.</p>
+    <div class="btns"><a class="btn" href="https://alittlehelp.eo.page">Join the waitlist</a><a class="btn btn-quiet" href="https://donorbox.org/launch-fund-for-a-little-help">Donate 💙</a></div>
   </div>
 </section>
 
-<!-- FOUNDER -->
-<section class="founder-section">
-  <img src="founderimage2.jpeg" alt="Megan Guessford" class="founder-photo">
-  <h2>Megan Guessford</h2>
-  <p class="role">Founder & Executive Director</p>
-  <div class="creds">
-    <span class="cred">Mother of Three</span>
-    <span class="cred">10 Years Sober</span>
-    <span class="cred">Community Builder</span>
-    <span class="cred">Arlington, TX</span>
-  </div>
-  <p>I built the app, established the nonprofit, and refused to let a dream stay a dream — all without a technical background, a team, or outside funding.</p>
-  <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
-    <a href="how-it-works.html" class="btn btn-primary">See How It Works →</a>
-    <a href="mailto:megan@alittlehelpapp.org" class="btn btn-pink">Get in Touch</a>
-  </div>
-</section>
+</main>
 
 <footer>
-  <div class="footer-logo">
-    <img src="transparentlogo.png" alt="Logo">
-    <span>A Little Help?!</span>
+  <div class="wrap">
+    <div>
+      <div class="foot-name"><img src="transparentlogo.png" alt="" width="40" height="40">A Little Help?!</div>
+      <p>A Little Help?! Inc. is a 501(c)(3) nonprofit organization. EIN 35&#8209;2983400.</p>
+      <p>802 Red Oak Lane, Arlington, TX 76013</p>
+      <p>Donations are tax-deductible as allowed by law.</p>
+    </div>
+    <ul class="foot-links">
+      <li><a href="mailto:megan@alittlehelpapp.org">megan@alittlehelpapp.org</a></li>
+      <li><a href="https://instagram.com/alittlehelpapp">Instagram</a> and <a href="https://tiktok.com/@alittlehelpapp">TikTok</a>: @alittlehelpapp</li>
+      <li><a href="privacy.html#privacy">Privacy</a>, <a href="privacy.html#terms">Terms</a>, and <a href="privacy.html#disclaimer">Disclaimer</a></li>
+    </ul>
+    <p class="foot-promise">Free forever. No targeted ads. No data selling. Built with love in Arlington, TX. 🌱</p>
   </div>
-  <p>A 501(c)(3) nonprofit organization · EIN: 35-2983400</p>
-  <p>802 Red Oak Lane, Arlington, TX 76013</p>
-  <p style="margin-top: 12px;">
-    <a href="mailto:megan@alittlehelpapp.org">megan@alittlehelpapp.org</a> ·
-    <a href="https://instagram.com/alittlehelpapp">Instagram</a> · <a href="https://tiktok.com/@alittlehelpapp">TikTok</a> · @alittlehelpapp
-  </p>
 </footer>
 
 <script>
-function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+  var btn = document.getElementById('menuBtn'), links = document.getElementById('navLinks');
+  btn.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
 </script>
 </body>
 </html>
